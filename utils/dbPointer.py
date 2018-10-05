@@ -1,22 +1,22 @@
 import sqlite3
-import sys
 
 import numpy as np
 
 from nlp import normalize
 
 
-# read databases
+# loading databases
 domains = ['restaurant', 'hotel', 'attraction', 'train', 'taxi', 'hospital']#, 'police']
 dbs = {}
 for domain in domains:
-    db = '../db/{}-dbase.db'.format(domain)
+    db = 'db/{}-dbase.db'.format(domain)
     conn = sqlite3.connect(db)
     c = conn.cursor()
     dbs[domain] = c
 
 
 def oneHotVector(num, domain, vector):
+    """Return number of available entities for particular domain."""
     number_of_options = 6
     if domain != 'train':
         idx = domains.index(domain)
@@ -50,6 +50,8 @@ def oneHotVector(num, domain, vector):
     return vector
 
 def queryResult(domain, turn):
+    """Returns the list of entities for a given domain
+    based on the annotation of the belief state"""
     # query the db
     sql_query = "select * from {}".format(domain)
 

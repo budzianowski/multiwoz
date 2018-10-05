@@ -1,5 +1,4 @@
 import re
-import sys
 
 import simplejson as json
 
@@ -29,7 +28,7 @@ def prepareSlotValuesIndependent():
     # read databases
     for domain in domains:
         try:
-            fin = file('../db/' + domain + '_db.json')
+            fin = file('db/' + domain + '_db.json')
             db_json = json.load(fin)
             fin.close()
 
@@ -104,7 +103,7 @@ def prepareSlotValuesIndependent():
             dic.append((normalize('Parkside Police Station'), '[' + domain + '_' + 'name' + ']'))
 
     # add at the end places from trains
-    fin = file('../db/' + 'train' + '_db.json')
+    fin = file('db/' + 'train' + '_db.json')
     db_json = json.load(fin)
     fin.close()
 

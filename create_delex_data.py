@@ -11,22 +11,26 @@ from zipfile import ZipFile
 
 import numpy as np
 
-import dbPointer
-import delexicalize
+from utils import dbPointer
+from utils import delexicalize
 
-from nlp import normalize
+from utils.nlp import normalize
 
 
 np.set_printoptions(precision=3)
 
 np.random.seed(2)
 
+# GLOBAL VARIABLES
+DICT_SIZE = 400
+MAX_LENGTH = 50
 
 def is_ascii(s):
     return all(ord(c) < 128 for c in s)
 
 
 def fixDelex(filename, data, data2, idx, idx_acts):
+    """Given system dialogue acts fix automatic delexicalization."""
     try:
         turn = data2[filename.strip('.json')][str(idx_acts)]
     except:
@@ -54,6 +58,8 @@ def fixDelex(filename, data, data2, idx, idx_acts):
 
 
 def delexicaliseReferenceNumber(sent, turn):
+    """Based on the belief state, we can find reference number that
+    during data gathering was created randomly."""
     domains = ['restaurant', 'hotel', 'attraction', 'train', 'taxi', 'hospital']  # , 'police']
     if turn['metadata']:
         for domain in domains:
@@ -77,7 +83,8 @@ def delexicaliseReferenceNumber(sent, turn):
 
 
 def addBookingPointer(task, turn, pointer_vector):
-    # Booking pointerŽ
+    """Add information about availability of the booking option."""
+    # Booking pointer
     rest_vec = np.array([1, 0])
     if task['goal']['restaurant']:
         if turn['metadata']['restaurant'].has_key("book"):
@@ -110,6 +117,7 @@ def addBookingPointer(task, turn, pointer_vector):
 
 
 def addDBPointer(turn):
+    """Create database pointer for all related domains."""
     domains = ['restaurant', 'hotel', 'attraction', 'train']
     pointer_vector = np.zeros(6 * len(domains))
     for domain in domains:
@@ -120,6 +128,7 @@ def addDBPointer(turn):
 
 
 def get_summary_bstate(bstate):
+    """Based on the mturk annotations we form multi-domain belief state"""
     domains = [u'taxi',u'restaurant',  u'hospital', u'hotel',u'attraction', u'train', u'police']
     summary_bstate = []
     for domain in domains:
@@ -169,6 +178,7 @@ def get_summary_bstate(bstate):
 
 
 def analyze_dialogue(dialogue, maxlen):
+    """Cleaning procedure for all kinds of errors in text and annotation."""
     d = dialogue
     # do all the necessary postprocessing
     if len(d['log']) % 2 != 0:
@@ -209,11 +219,7 @@ def analyze_dialogue(dialogue, maxlen):
 
 
 def get_dial(dialogue):
-    '''
-    extract a dialogue from the file
-    :param filename:
-    :return:
-    '''
+    """Extract a dialogue from the file"""
     dial = []
     d_orig = analyze_dialogue(dialogue, MAX_LENGTH)  # max turn len is 50 words
     if d_orig is None:
@@ -256,25 +262,32 @@ def createDict(word_freqs):
 
 
 def loadData():
-    data_url = "../data/multi-woz/data.json"
+    data_url = "data/multi-woz/data.json"
     dataset_url = "https://www.repository.cam.ac.uk/bitstream/handle/1810/280608/MULTIWOZ2.zip?sequence=3&isAllowed=y"
-    if not os.path.exists("../data"):
-        os.makedirs("../data")
-        os.makedirs("../data/multi-woz")
+    if not os.path.exists("data"):
+        os.makedirs("data")
+        os.makedirs("data/multi-woz")
 
     if not os.path.exists(data_url):
         print("Downloading and unzipping the MultiWOZ dataset")
         resp = urllib.urlopen(dataset_url)
         zip_ref = ZipFile(BytesIO(resp.read()))
-        zip_ref.extractall("../data/multi-woz")
+        zip_ref.extractall("data/multi-woz")
         zip_ref.close()
-        shutil.copy('../data/multi-woz/MULTIWOZ2 2/data.json', '../data/multi-woz/')
-        shutil.copy('../data/multi-woz/MULTIWOZ2 2/valListFile.json', '../data/multi-woz/')
-        shutil.copy('../data/multi-woz/MULTIWOZ2 2/testListFile.json', '../data/multi-woz/')
-        shutil.copy('../data/multi-woz/MULTIWOZ2 2/dialogue_acts.json', '../data/multi-woz/')
+        shutil.copy('data/multi-woz/MULTIWOZ2 2/data.json', 'data/multi-woz/')
+        shutil.copy('data/multi-woz/MULTIWOZ2 2/valListFile.json', 'data/multi-woz/')
+        shutil.copy('data/multi-woz/MULTIWOZ2 2/testListFile.json', 'data/multi-woz/')
+        shutil.copy('data/multi-woz/MULTIWOZ2 2/dialogue_acts.json', 'data/multi-woz/')
 
 
 def createDelexData():
+    """Main function of the script - loads delexical dictionary,
+    goes through each dialogue and does:
+    1) data normalization
+    2) delexicalization
+    3) addition of database pointer
+    4) saves the delexicalized data
+    """
     # download the data
     loadData()
     
@@ -282,15 +295,13 @@ def createDelexData():
     dic = delexicalize.prepareSlotValuesIndependent()
     delex_data = {}
 
-    fin1 = file('../data/multi-woz/data.json')
+    fin1 = file('data/multi-woz/data.json')
     data = json.load(fin1)
 
-    fin2 = file('../data/multi-woz/dialogue_acts.json')
+    fin2 = file('data/multi-woz/dialogue_acts.json')
     data2 = json.load(fin2)
 
     for dialogue_name in data:
-        if 'SNG0423' not in dialogue_name: #"'MUL' in filename  and 'PMUL' not in filename:
-           continue
 
         dialogue = data[dialogue_name]
         print dialogue_name
@@ -299,15 +310,14 @@ def createDelexData():
 
         for idx, turn in enumerate(dialogue['log']):
             # normalization, split and delexicalization of the sentence
-            #print turn['text']
             sent = normalize(turn['text'])
-            #print sent
+
             words = sent.split()
             sent = delexicalize.delexicalise(' '.join(words), dic)
 
             # parsing reference number GIVEN belief state
             sent = delexicaliseReferenceNumber(sent, turn)
-            #print sent
+
             # changes to numbers only here
             digitpat = re.compile('\d+')
             sent = re.sub(digitpat, '[value_count]', sent)
@@ -330,21 +340,23 @@ def createDelexData():
 
         delex_data[dialogue_name] = dialogue
 
-    with open('../data/multi-woz/delex.json', 'w') as outfile:
+    with open('data/multi-woz/delex.json', 'w') as outfile:
         json.dump(delex_data, outfile)
 
     return delex_data
 
 
 def divideData(data):
+    """Given test and validation sets, divide
+    the data for three different sets"""
     testListFile = []
-    fin = file('../data/multi-woz/testListFile.json')
+    fin = file('data/multi-woz/testListFile.json')
     for line in fin:
         testListFile.append(line[:-1])
     fin.close()
 
     valListFile = []
-    fin = file('../data/multi-woz/valListFile.json')
+    fin = file('data/multi-woz/valListFile.json')
     for line in fin:
         valListFile.append(line[:-1])
     fin.close()
@@ -360,8 +372,6 @@ def divideData(data):
     word_freqs_sys = OrderedDict()
     
     for dialogue_name in data:
-        # if 'PMUL' in filename:
-        #     continue
         print dialogue_name
         dial = get_dial(data[dialogue_name])
         if dial:
@@ -413,6 +423,8 @@ def divideData(data):
 
 
 def buildDictionaries(word_freqs_usr, word_freqs_sys):
+    """Build dictionaries for both user and system sides.
+    You can specify the size of the dictionary through DICT_SIZE variable."""
     dicts = []
     worddict_usr = createDict(word_freqs_usr)
     dicts.append(worddict_usr)
@@ -437,14 +449,14 @@ def buildDictionaries(word_freqs_usr, word_freqs_sys):
         json.dump(dicts[1], f,indent=2)
 
 
-if __name__ == "__main__":
-    # GLOBAL VARIABLES
-    DICT_SIZE = 400
-    MAX_LENGTH = 50
-
+def main():
     print('Create delexicalized dialogues. Get yourself a coffee, this might take a while.')
     delex_data = createDelexData()
     print('Divide dialogues for separate bits - usr, sys, db, bs')
     word_freqs_usr, word_freqs_sys = divideData(delex_data)
     print('Building dictionaries')
     buildDictionaries(word_freqs_usr, word_freqs_sys)
+
+
+if __name__ == "__main__":
+    main()

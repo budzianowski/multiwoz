@@ -2,7 +2,6 @@ from __future__ import division, print_function, unicode_literals
 
 import argparse
 import json
-import math
 import random
 import time
 from io import open
@@ -11,13 +10,9 @@ import numpy as np
 import torch
 from torch.optim import Adam
 
-import util as util
-from model import Model
+from utils import util
+from model.model import Model
 
-
-EOS_token = 1
-PAD_token = 3
-action_dim = 14
 
 parser = argparse.ArgumentParser(description='S2S')
 parser.add_argument('--batch_size', type=int, default=64, metavar='N', help='input batch size for training (default: 128)')
@@ -54,7 +49,7 @@ parser.add_argument('--train_output', type=str, default='data/train_dials/', hel
 
 parser.add_argument('--max_epochs', type=int, default=15)
 parser.add_argument('--early_stop_count', type=int, default=2)
-parser.add_argument('--model_dir', type=str, default='model/')
+parser.add_argument('--model_dir', type=str, default='model/model/')
 parser.add_argument('--model_name', type=str, default='translate.ckpt')
 
 parser.add_argument('--load_param', type=util.str2bool, nargs='?', const=True, default=False)
@@ -69,55 +64,10 @@ torch.manual_seed(args.seed)
 device = torch.device("cuda" if args.cuda else "cpu")
 
 
-def asMinutes(s):
-    m = math.floor(s / 60)
-    s -= m * 60
-    return '%dm %ds' % (m, s)
-
-
-def timeSince(since, percent):
-    now = time.time()
-    s = now - since
-    return '%s ' % (asMinutes(s))
-
-
-def padSequence(tensor):
-    pad_token = PAD_token
-    tensor_lengths = [len(sentence) for sentence in tensor]
-    longest_sent = max(tensor_lengths)
-    batch_size = len(tensor)
-    padded_tensor = np.ones((batch_size, longest_sent)) * pad_token
-
-    # copy over the actual sequences
-    for i, x_len in enumerate(tensor_lengths):
-        sequence = tensor[i]
-        padded_tensor[i, 0:x_len] = sequence[:x_len]
-
-    padded_tensor = torch.LongTensor(padded_tensor).to(device)
-    return padded_tensor, tensor_lengths
-
-
-def loadDialogue(val_file, input_tensor, target_tensor, bs_tensor, db_tensor):
-    # Iterate over dialogue
-    for idx, (usr, sys, bs, db) in enumerate(
-            zip(val_file['usr'], val_file['sys'], val_file['bs'], val_file['db'])):
-        tensor = [model.input_word2index(word) for word in usr.strip(' ').split(' ')] + [
-            EOS_token]  # model.input_word2index(word)
-        input_tensor.append(torch.tensor(tensor, dtype=torch.long, device=device))  # .view(-1, 1))
-
-        tensor = [model.output_word2index(word) for word in sys.strip(' ').split(' ')] + [EOS_token]
-        target_tensor.append(torch.tensor(tensor, dtype=torch.long, device=device))  # .view(-1, 1)
-
-        bs_tensor.append([float(belief) for belief in bs])
-        db_tensor.append([float(pointer) for pointer in db])
-
-    return input_tensor, target_tensor, bs_tensor, db_tensor
-
-
 def train(print_loss_total,print_act_total, print_grad_total, input_tensor, target_tensor, bs_tensor, db_tensor, name=None):
     # create an empty matrix with padding tokens
-    input_tensor, input_lengths = padSequence(input_tensor)
-    target_tensor, target_lengths = padSequence(target_tensor)
+    input_tensor, input_lengths = util.padSequence(input_tensor)
+    target_tensor, target_lengths = util.padSequence(target_tensor)
     bs_tensor = torch.tensor(bs_tensor, dtype=torch.float, device=device)
     db_tensor = torch.tensor(db_tensor, dtype=torch.float, device=device)
 
@@ -146,7 +96,6 @@ def trainIters(model, n_epochs=10, args=args):
         model.optimizer = Adam(lr=args.lr_rate, params=filter(lambda x: x.requires_grad, model.parameters()), weight_decay=args.l2_norm)
         model.optimizer_policy = Adam(lr=args.lr_rate, params=filter(lambda x: x.requires_grad, model.policy.parameters()), weight_decay=args.l2_norm)
 
-        cnt = 0
         dials = train_dials.keys()
         random.shuffle(dials)
         input_tensor = [];target_tensor = [];bs_tensor = [];db_tensor = []
@@ -155,34 +104,29 @@ def trainIters(model, n_epochs=10, args=args):
             model.optimizer.zero_grad()
             model.optimizer_policy.zero_grad()
 
-            input_tensor, target_tensor, bs_tensor, db_tensor = loadDialogue(val_file, input_tensor, target_tensor, bs_tensor, db_tensor)
+            input_tensor, target_tensor, bs_tensor, db_tensor = util.loadDialogue(model, val_file, input_tensor, target_tensor, bs_tensor, db_tensor)
 
             if len(db_tensor) > args.batch_size:
                 print_loss_total, print_act_total, print_grad_total = train(print_loss_total, print_act_total, print_grad_total, input_tensor, target_tensor, bs_tensor, db_tensor)
                 input_tensor = [];target_tensor = [];bs_tensor = [];db_tensor = [];
 
-            cnt += 1
-            if cnt > 30:
-               break
-
         print_loss_avg = print_loss_total / len(train_dials)
         print_act_total_avg = print_act_total / len(train_dials)
         print_grad_avg = print_grad_total / len(train_dials)
         print('TIME:', time.time() - start_time)
-        print('Time since %s (Epoch:%d %d%%) Loss: %.4f, Loss act: %.4f, Grad: %.4f' % (timeSince(start, epoch / n_epochs),
+        print('Time since %s (Epoch:%d %d%%) Loss: %.4f, Loss act: %.4f, Grad: %.4f' % (util.timeSince(start, epoch / n_epochs),
                                                             epoch, epoch / n_epochs * 100, print_loss_avg, print_act_total_avg, print_grad_avg))
 
         # VALIDATION
         valid_loss = 0
-        cnt=0
         for name, val_file in val_dials.items():
             input_tensor = []; target_tensor = []; bs_tensor = [];db_tensor = []
-            input_tensor, target_tensor, bs_tensor, db_tensor = loadDialogue(val_file, input_tensor,
+            input_tensor, target_tensor, bs_tensor, db_tensor = util.loadDialogue(model, val_file, input_tensor,
                                                                                          target_tensor, bs_tensor,
                                                                                          db_tensor)
             # create an empty matrix with padding tokens
-            input_tensor, input_lengths = padSequence(input_tensor)
-            target_tensor, target_lengths = padSequence(target_tensor)
+            input_tensor, input_lengths = util.padSequence(input_tensor)
+            target_tensor, target_lengths = util.padSequence(target_tensor)
             bs_tensor = torch.tensor(bs_tensor, dtype=torch.float, device=device)
             db_tensor = torch.tensor(db_tensor, dtype=torch.float, device=device)
 
@@ -190,10 +134,6 @@ def trainIters(model, n_epochs=10, args=args):
             proba = proba.view(-1, model.vocab_size) # flatten all predictions
             loss = model.gen_criterion(proba, target_tensor.view(-1))
             valid_loss += loss.item()
-
-            cnt+=1
-            if cnt > 30:
-               break
 
 
         valid_loss /= len(val_dials)

@@ -12,7 +12,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch import optim
-from torch.distributions import Categorical
 
 import policy
 
@@ -195,7 +194,6 @@ class SeqAttnDecoderRNN(nn.Module):
         stdv = 1. / math.sqrt(self.v.size(0))
         self.v.data.normal_(mean=0, std=stdv)
 
-
     def forward(self, input, hidden, encoder_outputs):
         if isinstance(hidden, tuple):
             h_t = hidden[0]
@@ -354,6 +352,9 @@ class Model(nn.Module):
             self.optimizer = optim.Adam(lr=self.args.lr_rate, params=filter(lambda x: x.requires_grad, self.parameters()), weight_decay=self.args.l2_norm)
 
     def forward(self, input_tensor, input_lengths, target_tensor, target_lengths, db_tensor, bs_tensor):
+        """Given the user sentence, user belief state and database pointer,
+        encode the sentence, decide what policy vector construct and
+        feed it as the first hiddent state to the decoder."""
         target_length = target_tensor.size(1)
 
         # for fixed encoding this is zero so it does not contribute
@@ -516,31 +517,6 @@ class Model(nn.Module):
                     break
                 sent.append(self.output_index2word(str(int(ind.item()))))
             decoded_sentences.append(' '.join(sent))
-
-        return decoded_sentences
-
-    def sample_decode(self, decoder_hidden, encoder_outputs, target_tensor):
-        decoded_sentences = []
-        batch_size, seq_len = target_tensor.size()
-        decoder_input = torch.LongTensor([[SOS_token] for _ in range(batch_size)], device=self.device)
-
-        decoded_words = torch.zeros((batch_size, self.max_len))
-        for t in range(self.max_len):
-            decoder_output, decoder_hidden = self.decoder(decoder_input, decoder_hidden, encoder_outputs)
-
-            d = Categorical(logits=decoder_output)
-            topi = d.sample()
-
-            decoded_words[:, t] = topi
-            decoder_input = topi.detach().view(-1, 1)
-
-        for sentence in decoded_words:
-            sent = []
-            for ind in sentence:
-                if self.output_index2word(str(int(ind.item()))) == self.output_index2word(str(EOS_token)):
-                    break
-                sent.append(self.output_index2word(str(int(ind.item()))))
-            decoded_sentences.append(sent)
 
         return decoded_sentences
 
