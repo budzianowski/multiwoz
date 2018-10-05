@@ -7,13 +7,12 @@ It is released by Paweł Budzianowski from Cambridge Dialogue Systems Group unde
 Python 2 with pip
 
 # Quick start
-Go to model directory
-```cd model```
+In repo directory:
 
 ## Preprocessing
 To download and pre-process the data run:
 
-```python preprocess.py```
+```python create_delex_data.py```
 
 ## Training
 To train the model run:
