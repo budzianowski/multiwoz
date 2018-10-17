@@ -110,7 +110,14 @@ def decode(num=1):
         val_dials_gen = {}
         valid_loss = 0
         for name, val_file in val_dials.items():
-            input_tensor, input_lengths, target_tensor, target_lengths, db_tensor, bs_tensor = util.loadDialogue(model, val_file)
+            input_tensor = [];  target_tensor = [];bs_tensor = [];db_tensor = []
+            input_tensor, target_tensor, bs_tensor, db_tensor = util.loadDialogue(model, val_file, input_tensor, target_tensor, bs_tensor, db_tensor)
+            # create an empty matrix with padding tokens
+            input_tensor, input_lengths = util.padSequence(input_tensor)
+            target_tensor, target_lengths = util.padSequence(target_tensor)
+            bs_tensor = torch.tensor(bs_tensor, dtype=torch.float, device=device)
+            db_tensor = torch.tensor(db_tensor, dtype=torch.float, device=device)
+
             output_words, loss_sentence = model.predict(input_tensor, input_lengths, target_tensor, target_lengths,
                                                         db_tensor, bs_tensor)
 
@@ -124,14 +131,18 @@ def decode(num=1):
 
         # TESTING
         test_dials_gen = {}
-        cnt = 0
         test_loss = 0
         for name, test_file in test_dials.items():
+            input_tensor = [];  target_tensor = [];bs_tensor = [];db_tensor = []
+            input_tensor, target_tensor, bs_tensor, db_tensor = util.loadDialogue(model, test_file, input_tensor, target_tensor, bs_tensor, db_tensor)
+            # create an empty matrix with padding tokens
+            input_tensor, input_lengths = util.padSequence(input_tensor)
+            target_tensor, target_lengths = util.padSequence(target_tensor)
+            bs_tensor = torch.tensor(bs_tensor, dtype=torch.float, device=device)
+            db_tensor = torch.tensor(db_tensor, dtype=torch.float, device=device)
 
-            input_tensor, input_lengths, target_tensor, target_lengths, db_tensor, bs_tensor = util.loadDialogue(model, test_file)
             output_words, loss_sentence = model.predict(input_tensor, input_lengths, target_tensor, target_lengths,
                                                         db_tensor, bs_tensor)
-
             test_loss += 0
             test_dials_gen[name] = output_words
 
@@ -162,7 +173,7 @@ def decodeWrapper():
     for ii in range(1, args.no_models + 1):
         print(70 * '-' + 'EVALUATING EPOCH %s' % ii)
         args.model_path = args.model_path + '-' + str(ii)
-        #decode(ii)
+        decode(ii)
         try:
             decode(ii)
         except:

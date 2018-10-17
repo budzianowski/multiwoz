@@ -8,6 +8,7 @@ import urllib
 from collections import OrderedDict
 from io import BytesIO
 from zipfile import ZipFile
+from tqdm import tqdm
 
 import numpy as np
 
@@ -301,10 +302,9 @@ def createDelexData():
     fin2 = file('data/multi-woz/dialogue_acts.json')
     data2 = json.load(fin2)
 
-    for dialogue_name in data:
-
+    for dialogue_name in tqdm(data):
         dialogue = data[dialogue_name]
-        print dialogue_name
+        #print dialogue_name
 
         idx_acts = 1
 
@@ -371,8 +371,8 @@ def divideData(data):
     word_freqs_usr = OrderedDict()
     word_freqs_sys = OrderedDict()
     
-    for dialogue_name in data:
-        print dialogue_name
+    for dialogue_name in tqdm(data):
+        #print dialogue_name
         dial = get_dial(data[dialogue_name])
         if dial:
             dialogue = {}

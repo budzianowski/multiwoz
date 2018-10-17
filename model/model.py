@@ -3,6 +3,7 @@ from __future__ import division, print_function, unicode_literals
 import json
 import math
 import operator
+import os
 import random
 from io import open
 from Queue import PriorityQueue
@@ -526,6 +527,9 @@ class Model(nn.Module):
 
     def saveModel(self, iter):
         print('Saving parameters..')
+        if not os.path.exists(self.model_dir):
+            os.makedirs(self.model_dir)
+
         torch.save(self.encoder.state_dict(), self.model_dir + self.model_name + '-' + str(iter) + '.enc')
         torch.save(self.policy.state_dict(), self.model_dir + self.model_name + '-' + str(iter) + '.pol')
         torch.save(self.decoder.state_dict(), self.model_dir + self.model_name + '-' + str(iter) + '.dec')
