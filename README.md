@@ -3,6 +3,42 @@
 multiwoz is an open source toolkit for building end-to-end trainable task-oriented dialogue models.
 It is released by Paweł Budzianowski from Cambridge Dialogue Systems Group under Apache License 2.0.
 
+<h2>Benchmarks</h2>
+<h3>Belief Tracking</h3>
+<div class="datagrid" style="width:500px;">
+<table>
+<thead><tr><th>Model</th><th>Joint Accuracy</th><th>Slot</th>
+</tr></thead>
+<tbody>
+<tr><td><a href="https://www.aclweb.org/anthology/P18-2069">MDBT</a> (Ramadan et al., 2018) </td><td>15.57 </td><td>89.53</td></tr>
+<tr><td><a href="https://arxiv.org/abs/1805.09655">GLAD</a> (Zhong et al., 2018)</td><td>35.57</td><td>95.44 </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1812.00899.pdf">GCE</a> (Nouri and Hosseini-Asl, 2018)</td><td>36.27</td><td>98.42</td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1905.08743.pdf">TRADE</a> (Wu et al, 2019)</td><td>48.62</td><td>96.92</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Context-to-Text Generation</h3>
+<div class="datagrid" style="width:500px;">
+<table>
+<thead><tr><th>Model</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th></tr></thead>
+<tbody>
+<tr><td><a href="https://pdfs.semanticscholar.org/47d0/1eb59cd37d16201fcae964bd1d2b49cfb55e.pdf">Baseline</a> (Budzianowski et al. 2018)</td><td>71.29</td><td> 60.96 </td><td> 18.8 </td></tr>
+<tr><td><a href="https://arxiv.org/abs/1902.08858">LaRL</a> (Zhao et al. 2019)</td><td>82.78</td><td>79.2</td><td> 12.8</td></tr>
+<tfoot> </tfoot>
+</tbody>
+</table>
+</div>
+
+<h3>Natural Language Generation</h3>
+<div class="datagrid" style="width:500px;"><table>
+<thead><tr><th>Model</th><th>SER</th><th>BLEU</th></tr></thead>
+<tbody>
+<tr><td><a href="https://pdfs.semanticscholar.org/47d0/1eb59cd37d16201fcae964bd1d2b49cfb55e.pdf">Baseline</a> (Budzianowski et al. 2018)</td><td>2.99 </td><td> 0.632</td></tr>
+</tbody>
+</table>
+</div>
+
 # Requirements
 Python 2 with pip
 
