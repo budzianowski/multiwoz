@@ -1,19 +1,42 @@
-# multiwoz
+# MultiWOZ
+Multi-Domain Wizard-of-Oz dataset (MultiWOZ), a fully-labeled collection of human-human written conversations spanning over multiple domains and topics. At a size of 10k dialogues, it is at least one order of magnitude larger than all previous annotated task-oriented corpora.
 
-multiwoz is an open source toolkit for building end-to-end trainable task-oriented dialogue models.
-It is released by Paweł Budzianowski from Cambridge Dialogue Systems Group under Apache License 2.0.
+The new, corrected version of the dataset is available at [MultiWOZ_2.1](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.1.zip) thanks to [the Amazon crew](https://arxiv.org/abs/1907.01669).
+
+The dataset used in the EMNLP publication can be accessed at: [MultiWOZ_2.0](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.0.zip)
+
+The dataset used in the ACL publication can be accessed at: [MultiWOZ_1.0](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_1.0.zip)
+
+# Data structure
+There are 3,406 single-domain dialogues that include booking if the domain allows for that and 7,032 multi-domain dialogues consisting of at least 2 up to 5 domains. To enforce reproducibility of results, the corpus was randomly split into a train, test and development set. The test and development sets contain 1k examples each. Even though all dialogues are coherent, some of them were not finished in terms of task description. Therefore, the validation and test sets only contain fully successful dialogues thus enabling a fair comparison of models. There are no dialogues from hospital and police domains in validation and testing sets.
+
+Each dialogue consists of a goal, multiple user and system utterances as well as a belief state. Additionally, the task description in natural language presented to turkers working from the visitor’s side is added. Dialogues with MUL in the name refers to multi-domain dialogues. Dialogues with SNG refers to single-domain dialogues (but a booking sub-domain is possible). The booking might not have been possible to complete if fail_book option is not empty in goal specifications – turkers did not know about that.
+
+The belief state have three sections: semi, book and booked. Semi refers to slots from a particular domain. Book refers to booking slots for a particular domain and booked is a sub-list of book dictionary with information about the booked entity (once the booking has been made). The goal sometimes was wrongly followed by the turkers which may results in the wrong belief state. The joint accuracy metrics includes ALL slots.
+
+# FAQ
+1. File names refer to two types of dialogues. The MUL and PMUL names refer to strictly multi domain dialogues (at least 2 main domains are involved) while the SNG, SSNG and WOZ names refer to single domain dialogues with potentially sub-domains like booking.
+2. Only system utterances are annotated with dialogue acts – there are no annotations from the user side.
+3. There is no 1-to-1 mapping between dialogue acts and sentences.
+4. There is no dialogue state tracking labels for police and hospital as these domains are very simple. However, there are no dialogues with these domains in validation and testing sets either.
+5. For the dialogue state tracking experiments please follow the datat processing and scoring scripts from the [TRADE](https://github.com/jasonwu0731/trade-dst) model (Wu et al. 2019).
 
 <h2>Benchmarks</h2>
 <h3>Belief Tracking</h3>
 <div class="datagrid" style="width:500px;">
 <table>
-<thead><tr><th>Model</th><th>Joint Accuracy</th><th>Slot</th>
-</tr></thead>
+<thead><tr><th></th><th colspan="2">MultiWOZ 2.0</th><th colspan="2">MultiWOZ 2.1</th></tr></thead>
+<thead><tr><th>Model</th><th>Joint Accuracy</th><th>Slot</th><th>Joint Accuracy</th><th>Slot</th></tr></thead>
 <tbody>
-<tr><td><a href="https://www.aclweb.org/anthology/P18-2069">MDBT</a> (Ramadan et al., 2018) </td><td>15.57 </td><td>89.53</td></tr>
-<tr><td><a href="https://arxiv.org/abs/1805.09655">GLAD</a> (Zhong et al., 2018)</td><td>35.57</td><td>95.44 </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/1812.00899.pdf">GCE</a> (Nouri and Hosseini-Asl, 2018)</td><td>36.27</td><td>98.42</td></tr>
-<tr><td><a href="https://arxiv.org/pdf/1905.08743.pdf">TRADE</a> (Wu et al, 2019)</td><td>48.62</td><td>96.92</td></tr>
+<tr><td><a href="https://www.aclweb.org/anthology/P18-2069">MDBT</a> (Ramadan et al., 2018) </td><td>15.57 </td><td>89.53</td><td></td><td></td></tr>
+<tr><td><a href="https://arxiv.org/abs/1805.09655">GLAD</a> (Zhong et al., 2018)</td><td>35.57</td><td>95.44 </td><td></td><td></td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1812.00899.pdf">GCE</a> (Nouri and Hosseini-Asl, 2018)</td><td>36.27</td><td>98.42</td><td></td><td></td></tr>
+    <tr><td><a href="https://arxiv.org/pdf/1908.01946.pdf">Neural Reading</a> (Gao et al, 2019)</td><td>41.10</td><td></td><td></td><td></td></tr>
+
+<tr><td><a href="https://arxiv.org/pdf/1907.00883.pdf">HyST</a> (Goel et al, 2019)</td><td>44.24</td><td></td><td></td><td></td></tr>
+
+<tr><td><a href="https://arxiv.org/pdf/1905.08743.pdf">TRADE</a> (Wu et al, 2019)</td><td>48.62</td><td>96.92</td><td>45.60</td><td></td></tr>
+    <tr><td><a href="https://arxiv.org/pdf/1911.06192.pdf">DSTQA</a> (Zhou et al, 2019)</td><td>51.44</td><td>97.24</td><td>51.17</td><td>97.21</td></tr>
 </tbody>
 </table>
 </div>
@@ -129,8 +152,19 @@ work, please cite the corresponding papers. The bibtex are listed below:
   pages={432--437},
   year={2018}
 }
+
+[Eric et al. 2019]
+@article{eric2019multiwoz,
+  title={MultiWOZ 2.1: Multi-Domain Dialogue State Corrections and State Tracking Baselines},
+  author={Eric, Mihail and Goel, Rahul and Paul, Shachi and Sethi, Abhishek and Agarwal, Sanchit and Gao, Shuyag and Hakkani-Tur, Dilek},
+  journal={arXiv preprint arXiv:1907.01669},
+  year={2019}
+}
 ```
 
-# Bug Report
+# License
+MultiWOZ is an open source toolkit for building end-to-end trainable task-oriented dialogue models.
+It is released by Paweł Budzianowski from Cambridge Dialogue Systems Group under Apache License 2.0.
 
+# Bug Report
 If you have found any bugs in the code, please contact: pfb30 at cam dot ac dot uk
