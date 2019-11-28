@@ -34,7 +34,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
     <tr><td><a href="https://arxiv.org/pdf/1908.01946.pdf">Neural Reading</a> (Gao et al, 2019)</td><td>41.10</td><td></td><td></td><td></td></tr>
 
 <tr><td><a href="https://arxiv.org/pdf/1907.00883.pdf">HyST</a> (Goel et al, 2019)</td><td>44.24</td><td></td><td></td><td></td></tr>
-<tr><td><a href="https://www.aclweb.org/anthology/P19-1546/">SUBMT</a> (Wu et al, 2019)</td><td>46.65</td><td>96.44</td><td></td><td></td></tr>
+<tr><td><a href="https://www.aclweb.org/anthology/P19-1546/">SUMBT</a> (Lee et al, 2019)</td><td>46.65</td><td>96.44</td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/1905.08743.pdf">TRADE</a> (Wu et al, 2019)</td><td>48.62</td><td>96.92</td><td>45.60</td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/1909.00754.pdf">COMER</a> (Ren et al, 2019)</td><td>48.79</td><td></td><td></td><td></td></tr>
     <tr><td><a href="https://arxiv.org/pdf/1911.06192.pdf">DSTQA</a> (Zhou et al, 2019)</td><td>51.44</td><td>97.24</td><td>51.17</td><td>97.21</td></tr>
