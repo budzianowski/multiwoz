@@ -263,22 +263,16 @@ def createDict(word_freqs):
 
 
 def loadData():
-    data_url = "data/multi-woz/data.json"
-    dataset_url = "https://www.repository.cam.ac.uk/bitstream/handle/1810/280608/MULTIWOZ2.zip?sequence=3&isAllowed=y"
-    if not os.path.exists("data"):
-        os.makedirs("data")
+    if not os.path.exists("data/multi-woz"):
         os.makedirs("data/multi-woz")
-
-    if not os.path.exists(data_url):
-        print("Downloading and unzipping the MultiWOZ dataset")
-        resp = urllib.urlopen(dataset_url)
-        zip_ref = ZipFile(BytesIO(resp.read()))
-        zip_ref.extractall("data/multi-woz")
-        zip_ref.close()
-        shutil.copy('data/multi-woz/MULTIWOZ2 2/data.json', 'data/multi-woz/')
-        shutil.copy('data/multi-woz/MULTIWOZ2 2/valListFile.json', 'data/multi-woz/')
-        shutil.copy('data/multi-woz/MULTIWOZ2 2/testListFile.json', 'data/multi-woz/')
-        shutil.copy('data/multi-woz/MULTIWOZ2 2/dialogue_acts.json', 'data/multi-woz/')
+        dataset_url = "data/MultiWOZ_2.0.zip"
+        with ZipFile(dataset_url, 'r') as zip_ref:
+            zip_ref.extractall("data/multi-woz")
+            zip_ref.close()
+            shutil.copy('data/multi-woz/MULTIWOZ2 2/data.json', 'data/multi-woz/')
+            shutil.copy('data/multi-woz/MULTIWOZ2 2/valListFile.json', 'data/multi-woz/')
+            shutil.copy('data/multi-woz/MULTIWOZ2 2/testListFile.json', 'data/multi-woz/')
+            shutil.copy('data/multi-woz/MULTIWOZ2 2/dialogue_acts.json', 'data/multi-woz/')
 
 
 def createDelexData():
@@ -301,6 +295,8 @@ def createDelexData():
 
     fin2 = file('data/multi-woz/dialogue_acts.json')
     data2 = json.load(fin2)
+
+    cnt = 10
 
     for dialogue_name in tqdm(data):
         dialogue = data[dialogue_name]

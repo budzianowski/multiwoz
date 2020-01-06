@@ -8,11 +8,10 @@ import os
 import shutil
 import time
 
-import numpy as np
 import torch
 
 from utils import util
-from model.evaluator import evaluateModel
+from evaluate import MultiWozEvaluator
 from model.model import Model
 
 parser = argparse.ArgumentParser(description='S2S')
@@ -96,6 +95,8 @@ def loadModelAndData(num):
 
 def decode(num=1):
     model, val_dials, test_dials = loadModelAndData(num)
+    evaluator_valid = MultiWozEvaluator("valid")
+    evaluator_test = MultiWozEvaluator("test")
 
     start_time = time.time()
     for ii in range(2):
@@ -127,7 +128,7 @@ def decode(num=1):
         print('Current VALID LOSS:', valid_loss)
         with open(args.valid_output + 'val_dials_gen.json', 'w') as outfile:
             json.dump(val_dials_gen, outfile)
-        evaluateModel(val_dials_gen, val_dials, mode='valid')
+        evaluator_valid.evaluateModel(val_dials_gen, val_dials, mode='valid')
 
         # TESTING
         test_dials_gen = {}
@@ -146,12 +147,11 @@ def decode(num=1):
             test_loss += 0
             test_dials_gen[name] = output_words
 
-
         test_loss /= len(test_dials)
         print('Current TEST LOSS:', test_loss)
         with open(args.decode_output + 'test_dials_gen.json', 'w') as outfile:
             json.dump(test_dials_gen, outfile)
-        evaluateModel(test_dials_gen, test_dials, mode='test')
+        evaluator_test.evaluateModel(test_dials_gen, test_dials, mode='test')
 
     print('TIME:', time.time() - start_time)
 
@@ -179,6 +179,7 @@ def decodeWrapper():
             print('cannot decode')
 
         args.model_path = args.original
+
 
 if __name__ == '__main__':
     decodeWrapper()
