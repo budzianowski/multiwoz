@@ -55,6 +55,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <tr><td><a href="https://arxiv.org/pdf/1907.10016.pdf">Structured Fusion</a> (Mehri et al. 2019)</td><td>82.70</td><td>72.10</td><td> 16.34</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/abs/1902.08858">LaRL</a> (Zhao et al. 2019)</td><td>82.8</td><td>79.2</td><td> 12.8</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/abs/1910.03756">ARDM</a> (Wu et al. 2019)</td><td>87.4</td><td>72.8</td><td> 20.6</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1911.10484.pdf">DAMD</a> (Zhang et al. 2019)</td><td>89.2</td><td>77.9</td><td> 18.6</td><td> </td><td> </td><td> </td></tr>
 <tfoot> </tfoot>
 </tbody>
 </table>
@@ -107,9 +108,16 @@ Some of these args include:
 ```
 
 ## Testing
-To evaluate the run:
+To evaluate the trained model, run:
 
 ```python test.py [--args=value]```
+
+To evaluate the outside model, run:
+
+```python evaluate.py```
+
+where in line 611 you need to load your generation predictions.
+
 
 # Benchmark results
 The following [benchmark results](http://dialogue.mi.eng.cam.ac.uk/index.php/corpus/) were produced by this software.
