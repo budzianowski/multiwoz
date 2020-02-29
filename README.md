@@ -71,7 +71,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 </div>
 
 # Requirements
-Python 2 with pip
+Python 2 with pip, pytorch==0.4.1
 
 # Quick start
 In repo directory:
