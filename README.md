@@ -1,6 +1,9 @@
 # MultiWOZ
 Multi-Domain Wizard-of-Oz dataset (MultiWOZ), a fully-labeled collection of human-human written conversations spanning over multiple domains and topics. At a size of 10k dialogues, it is at least one order of magnitude larger than all previous annotated task-oriented corpora.
 
+
+The newest, corrected version of the dataset is available at [MultiWOZ_2.2](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.2.zip) thanks to [the Google crew.](https://www.aclweb.org/anthology/2020.nlp4convai-1.13i/).
+
 The new, corrected version of the dataset is available at [MultiWOZ_2.1](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.1.zip) thanks to [the Amazon crew.](https://arxiv.org/abs/1907.01669).
 
 The dataset used in the EMNLP publication can be accessed at: [MultiWOZ_2.0](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.0.zip)
