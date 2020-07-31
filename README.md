@@ -207,10 +207,10 @@ work, please cite the corresponding papers. The bibtex are listed below:
 }
 
 [Zang et al. 2020]
-@article{zang2020multiwoz,
+@inproceedings{zang2020multiwoz,
   title={MultiWOZ 2.2: A Dialogue Dataset with Additional Annotation Corrections and State Tracking Baselines},
   author={Zang, Xiaoxue and Rastogi, Abhinav and Sunkara, Srinivas and Gupta, Raghav and Zhang, Jianguo and Chen, Jindong},
-  journal={Proceedings of the 2nd Workshop on Natural Language Processing for Conversational AI, ACL 2020},
+  booktitle={Proceedings of the 2nd Workshop on Natural Language Processing for Conversational AI, ACL 2020},
   pages={109--117},
   year={2020}
 }
