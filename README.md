@@ -2,9 +2,9 @@
 Multi-Domain Wizard-of-Oz dataset (MultiWOZ), a fully-labeled collection of human-human written conversations spanning over multiple domains and topics. At a size of 10k dialogues, it is at least one order of magnitude larger than all previous annotated task-oriented corpora.
 
 
-The newest, corrected version of the dataset is available at [MultiWOZ_2.2](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.2.zip) thanks to [the Google crew.](https://arxiv.org/abs/2007.12720).
+The newest, corrected version of the dataset is available at [MultiWOZ_2.2](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.2.zip) thanks to [the Google crew](https://arxiv.org/abs/2007.12720).
 
-The new, corrected version of the dataset is available at [MultiWOZ_2.1](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.1.zip) thanks to [the Amazon crew.](https://arxiv.org/abs/1907.01669).
+The new, corrected version of the dataset is available at [MultiWOZ_2.1](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.1.zip) thanks to [the Amazon crew](https://arxiv.org/abs/1907.01669).
 
 The dataset used in the EMNLP publication can be accessed at: [MultiWOZ_2.0](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.0.zip)
 
@@ -58,23 +58,25 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <thead><tr><th>(INFORM	+ SUCCESS)*0.5 +	BLEU</th><th colspan="3">MultiWOZ 2.0</th><th colspan="3">MultiWOZ 2.1</th></tr></thead>
 <thead><tr><th>Model</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th></tr></thead>
 <tbody>
- <tr><td><a href="https://arxiv.org/pdf/1907.05346.pdf">TokenMoE</a> (Pei et al. 2019)</td><td>75.30</td><td> 59.70</td><td> 16.81 </td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://pdfs.semanticscholar.org/47d0/1eb59cd37d16201fcae964bd1d2b49cfb55e.pdf">Baseline</a> (Budzianowski et al. 2018)</td><td>71.29</td><td> 60.96 </td><td> 18.8 </td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/1907.10016.pdf">Structured Fusion</a> (Mehri et al. 2019)</td><td>82.70</td><td>72.10</td><td> 16.34</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/abs/1902.08858">LaRL</a> (Zhao et al. 2019)</td><td>82.8</td><td>79.2</td><td> 12.8</td><td> </td><td> </td><td> </td></tr>
+ <tr><td><a href="https://arxiv.org/pdf/1907.05346.pdf">TokenMoE*</a> (Pei et al. 2019)</td><td>75.30</td><td> 59.70</td><td> 16.81 </td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://pdfs.semanticscholar.org/47d0/1eb59cd37d16201fcae964bd1d2b49cfb55e.pdf">Baseline*</a> (Budzianowski et al. 2018)</td><td>71.29</td><td> 60.96 </td><td> 18.8 </td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1907.10016.pdf">Structured Fusion*</a> (Mehri et al. 2019)</td><td>82.70</td><td>72.10</td><td> 16.34</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/abs/1902.08858">LaRL*</a> (Zhao et al. 2019)</td><td>82.8</td><td>79.2</td><td> 12.8</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td>88.9</td><td>67.1</td><td> 16.9</td><td> 85.1</td><td> 73.5</td><td> 16.22</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/1911.08151.pdf">MoGNet</a> (Pei et al. 2019)</td><td>85.3</td><td>73.30</td><td> 20.13</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/1905.12866.pdf">HDSA</a> (Chen et al. 2019)</td><td>82.9</td><td>68.9</td><td> 23.6</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1905.12866.pdf">HDSA*</a> (Chen et al. 2019)</td><td>82.9</td><td>68.9</td><td> 23.6</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/abs/1910.03756">ARDM</a> (Wu et al. 2019)</td><td>87.4</td><td>72.8</td><td> 20.6</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/1911.10484.pdf">DAMD</a> (Zhang et al. 2019)</td><td>89.2</td><td>77.9</td><td> 18.6</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2005.05298.pdf">SOLOIST</a> (Peng et al. 2020)</td><td>89.60</td><td> 79.30</td><td> 18.3</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2004.12363.pdf">MarCo</a> (Wang et al. 2020)</td><td>92.30</td><td> 78.60</td><td> 20.02</td><td> 92.50</td><td> 77.80</td><td> 19.54</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2006.06814.pdf">HDNO</a> (Wang et al. 2020)</td><td>96.40</td><td>84.70</td><td>18.85</td><td>92.80</td><td>83.00</td><td> 18.97</td></tr>
 
+
 <tfoot> </tfoot>
 </tbody>
 </table>
 </div>
+* The results were obtained with a previous version of the evaluator. The performance on these works before the upgrade were underestimated. 
 
 <h3>Natural Language Generation</h3>
 <div class="datagrid" style="width:500px;"><table>
