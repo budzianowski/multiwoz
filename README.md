@@ -50,6 +50,17 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 
 </tbody>
 </table>
+
+<table>
+<thead><tr><th></th><th colspan="2">MultiWOZ 2.1</th><th colspan="2">MultiWOZ 2.2</th></tr></thead>
+<thead><tr><th>Model</th><th>Joint Accuracy</th><th>Slot</th><th>Joint Accuracy</th><th>Slot</th></tr></thead>
+<tbody>
+<tr><td><a href="https://arxiv.org/pdf/1909.05855.pdf">SGD-baseline</a> (Rastogi et al, 2019)</td><td>43.4</td><td></td><td>42.0</td><td></td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1905.08743.pdf">TRADE</a> (Wu et al, 2019)</td><td>46.0</td><td></td><td>45.4</td><td></td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1910.03544.pdf">DS-DST</a> (Zhang et al, 2020)</td><td>51.2</td><td></td><td>51.7</td><td></td></tr>
+</tbody>
+</table>
+
 </div>
 
 
