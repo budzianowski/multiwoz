@@ -54,14 +54,18 @@ def normalize(text):
             if text[sidx - 1] == '(':
                 sidx -= 1
             eidx = text.find(m[-1], sidx) + len(m[-1])
+            if eidx < len(text) and text[eidx] == ")" and text[sidx] == "(":
+                sidx += 1
             text = text.replace(text[sidx:eidx], ''.join(m))
+            sidx += 1
 
     # normalize postcode
-    ms = re.findall('([a-z]{1}[\. ]?[a-z]{1}[\. ]?\d{1,2}[, ]+\d{1}[\. ]?[a-z]{1}[\. ]?[a-z]{1}|[a-z]{2}\d{2}[a-z]{2})',
+    ms = re.findall('((cb|c\.b|c b|pe|p\.e|p e)[\. ]?\d{1,2}[, ]+\d{1}[\. ]?[a-z]{1}[\. ]?[a-z]{1}|[a-z]{2}\d{2}[a-z]{2})',
                     text)
     if ms:
         sidx = 0
         for m in ms:
+            m = m[0]
             sidx = text.find(m, sidx)
             eidx = sidx + len(m)
             text = text[:sidx] + re.sub('[,\. ]', '', m) + text[eidx:]
