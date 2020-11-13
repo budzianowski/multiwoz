@@ -26,7 +26,7 @@ defined for each domain.
 Of the 61 slots in the schema, the following 35 slots are tracked in the
 dialogue state:
 
-```json
+```
 {
   "attraction-area",
   "attraction-name",
@@ -77,12 +77,12 @@ list of values to incorporate such cases. <span style="color:red">Predicting any
 of them is considered as correct in the evaluation.</span>** Specifically, the
 state values of each turn is represented as:
 
-```json
+```
 {
   "state":{
-    "active_intent": "String. User intent of the current turn.",
-    "requested_slots": "List of string representing the slots, the values of which are being requested by the user.",
-    "slot_values": "Dict of state values. The key is slot name in string. The value is a list of values."
+    "active_intent": String. User intent of the current turn.
+    "requested_slots": List of string representing the slots, the values of which are being requested by the user.
+    "slot_values": Dict of state values. The key is slot name in string. The value is a list of values.
   }
 }
 ```
@@ -116,13 +116,13 @@ them as spans, we use a <span style="color:red">"copy from" annotation</span> to
 identify the slot it copies the value from.** This annotation is formatted as
 follows,
 
-```json
+```
 {
   "slots": [
     {
-      "slot": "Slot name string.",
-      "copy_from": "The slot to copy from.",
-      "value": "A list of slot values being . It corresponds to the state values of the 'copy_from' slot."
+      "slot": Slot name string.
+      "copy_from": The slot to copy from.
+      "value": A list of slot values being . It corresponds to the state values of the "copy_from" slot.
     }
   ]
 }
@@ -142,7 +142,7 @@ Please check the annotated action annotation in "dialog_acts.json". It is
 formatted in the same style as MultiWOZ 2.1 except that we use character-level
 indexing instead of token-level indexing for the action values.
 
-```json
+```
 {
   "$dialogue_id": [
     "$turn_id": {
