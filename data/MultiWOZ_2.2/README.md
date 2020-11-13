@@ -14,69 +14,55 @@ defined for each domain.
 
 | Domain     | Categorical slots       | Non-categorical slots   | Intents    |
 | ---------- | :---------------------: | :---------------------: | :--------: |
-| Restaurant | pricerange, area,       | food, name, booktime,   | find, book |
-:            : bookday, bookpeople     : address, phone,         :            :
-:            :                         : postcode, ref           :            :
-| Attraction | area, type              | name, address,          | find       |
-:            :                         : entrancefee, openhours  :            :
-:            :                         : phone, postcode,        :            :
-| Hotel      | pricerange, parking,    | name, address, phone,   | find, book |
-:            : internet, stars, area,  : postcode, ref           :            :
-:            : type, bookpeople        :                         :            :
-:            : ,bookday, bookstay      :                         :            :
-| Taxi       | -                       | destination, departure, | book       |
-:            :                         : arriveby, leaveat,      :            :
-:            :                         : phone, type             :            :
-| Train      | destination, departure, | arriveby, leaveat,      | find, book |
-:            : day, bookpeople         : trainid, ref, price,    :            :
-:            :                         : duration                :            :
-| Bus        | day                     | departure, destination, | find       |
-:            :                         : leaveat                 :            :
-| Hospital   | -                       | department , address,   | find       |
-:            :                         : phone, postcode         :            :
-| Police     | -                       | name, address, phone,   | find       |
-:            :                         : postcode                :            :
+| Restaurant | pricerange, area, bookday, bookpeople | food, name, booktime, address, phone, postcode, ref | find, book |
+| Attraction | area, type              | name, address, entrancefee, openhours, entrancefee, openhours, phone, postcode    | find       |
+| Hotel      | pricerange, parking, internet, stars, area, type, bookpeople, bookday, bookstay  | name, address, phone, postcode, ref | find, book |
+| Taxi       | -                       | destination, departure, arriveby, leaveat, phone, type | book       |
+| Train      | destination, departure, day, bookpeople | arriveby, leaveat, trainid, ref, price, duration | find, book |
+| Bus        | day                     | departure, destination, leaveat | find       |
+| Hospital   | -                       | department , address, phone, postcode | find       |
+| Police     | -                       | name, address, phone, postcode | find       |
 
 Of the 61 slots in the schema, the following 35 slots are tracked in the
 dialogue state:
 
 ```json
 {
-  'attraction-area',
-  'attraction-name',
-  'attraction-type',
-  'bus-day',
-  'bus-departure',
-  'bus-destination',
-  'bus-leaveat',
-  'hospital-department',
-  'hotel-area',
-  'hotel-bookday',
-  'hotel-bookpeople',
-  'hotel-bookstay',
-  'hotel-internet',
-  'hotel-name',
-  'hotel-parking',
-  'hotel-pricerange',
-  'hotel-stars',
-  'hotel-type',
-  'restaurant-area',
-  'restaurant-bookday',
-  'restaurant-bookpeople',
-  'restaurant-booktime',
-  'restaurant-food',
-  'restaurant-name',
-  'restaurant-pricerange',
-  'taxi-arriveby',
-  'taxi-departure',
-  'taxi-destination',
-  'taxi-leaveat',
-  'train-arriveby',
-  'train-bookpeople',
-  'train-day',
-  'train-departure',
-  'train-destination',
-  'train-leaveat'
+  "attraction-area",
+  "attraction-name",
+  "attraction-type",
+  "bus-day",
+  "bus-departure",
+  "bus-destination",
+  "bus-leaveat",
+  "hospital-department",
+  "hotel-area",
+  "hotel-bookday",
+  "hotel-bookpeople",
+  "hotel-bookstay",
+  "hotel-internet",
+  "hotel-name",
+  "hotel-parking",
+  "hotel-pricerange",
+  "hotel-stars",
+  "hotel-type",
+  "restaurant-area",
+  "restaurant-bookday",
+  "restaurant-bookpeople",
+  "restaurant-booktime",
+  "restaurant-food",
+  "restaurant-name",
+  "restaurant-pricerange",
+  "taxi-arriveby",
+  "taxi-departure",
+  "taxi-destination",
+  "taxi-leaveat",
+  "train-arriveby",
+  "train-bookpeople",
+  "train-day",
+  "train-departure",
+  "train-destination",
+  "train-leaveat"
 }
 ```
 
@@ -94,9 +80,9 @@ state values of each turn is represented as:
 ```json
 {
   "state":{
-    "active_intent": String. User intent of the current turn.
-    "requested_slots": List of string representing the slots, the values of which are being requested by the user.
-    "slot_values": Dict of state values. The key is slot name in string. The value is a list of values.
+    "active_intent": "String. User intent of the current turn.",
+    "requested_slots": "List of string representing the slots, the values of which are being requested by the user.",
+    "slot_values": "Dict of state values. The key is slot name in string. The value is a list of values."
   }
 }
 ```
@@ -105,7 +91,7 @@ In addition, we also add the span annotations that identify the location where
 slot values have been mentioned in the utterances for non-categorical slots.
 These span annotations are represented as follows:
 
-```json
+```
 {
   "slots": [
     {
@@ -119,7 +105,7 @@ These span annotations are represented as follows:
 ```
 
 There are some non-categorical slots whose values are carried over from another
-slot in the dialogue state. Their values don't explicitly appear in the
+slot in the dialogue state. Their values don"t explicitly appear in the
 utterances.
 
 For example, a user utterance can be *"I also need a taxi from the restaurant to
@@ -134,9 +120,9 @@ follows,
 {
   "slots": [
     {
-      "slot": Slot name string.
-      "copy_from": The slot to copy from.
-      "value": A list of slot values being . It corresponds to the state values of the "copy_from" slot.
+      "slot": "Slot name string.",
+      "copy_from": "The slot to copy from.",
+      "value": "A list of slot values being . It corresponds to the state values of the 'copy_from' slot."
     }
   ]
 }
@@ -148,7 +134,7 @@ There are 8,333 turns missing dialogue action annotations in MultiWOZ 2.1. We
 used a finetuned [T5 model](https://github.com/google-research/text-to-text-transfer-transformer) to annotate actions for these missing turns, and manually
 verified and corrected them. Please note that there are still 749
 turns without dialogue action annotations because the semantics of the
-utterances can't be appropriately expressed using
+utterances can"t be appropriately expressed using
 [the dialogue actions defined by ConvLab](https://github.com/ConvLab/ConvLab/blob/master/data/multiwoz/annotation/Multiwoz%20data%20analysis.md#dialog-act),
 such as *"Sure. Just a moment."*, *"said to skip."*, etc.
 
