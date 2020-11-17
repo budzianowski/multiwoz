@@ -44,6 +44,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
  <tr><td><a href="https://arxiv.org/pdf/1910.03544.pdf">DS-DST</a> (Zhang et al, 2019)</td><td></td><td></td><td>51.2</td><td></td><td>51.7</td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2009.08115.pdf">LABES-S2S</a> (Zhang et al, 2020)</td><td></td><td></td><td>51.45</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/1910.03544.pdf">DST-Picklist</a> (Zhang et al, 2019)</td><td>54.39</td><td></td><td>53.3</td><td></td><td></td><td></td></tr>
+ <tr><td><a href="https://arxiv.org/pdf/2009.12005.pdf">MinTL-BART</a> (Lin et al, 2020)</td><td>52.10</td><td></td><td>53.62</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://www.aaai.org/Papers/AAAI/2020GB/AAAI-ChenL.10030.pdf">SST</a> (Chen et al. 2020)</td><td></td><td></td><td>55.23</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2005.02877">TripPy</a> (Heck et al. 2020)</td><td></td><td></td><td>55.3</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td></td><td></td><td>56.45</td><td></td><td></td><td></td></tr>
@@ -100,6 +101,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <tr><td><a href="https://arxiv.org/pdf/2009.08115.pdf">LABES-S2S</a> (Zhang et al. 2020)</td><td></td><td></td><td> </td><td>78.07 </td><td> 67.06</td><td> 18.3</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td>84.4</td><td>70.1</td><td> 15.01</td><td> </td><td></td><td></td></tr>
  <tr><td><a href="https://arxiv.org/pdf/2005.05298.pdf">SOLOIST</a> (Peng et al. 2020)</td><td>85.50</td><td>72.90</td><td> 16.54</td><td> </td><td></td><td> </td></tr>
+  <tr><td><a href="https://arxiv.org/pdf/2009.12005.pdf">MinTL-BART</a> (Lin et al. 2020)</td><td>84.88</td><td>74.91</td><td> 17.89</td><td> </td><td></td><td> </td></tr>
 
 <tfoot> </tfoot>
 </tbody>
