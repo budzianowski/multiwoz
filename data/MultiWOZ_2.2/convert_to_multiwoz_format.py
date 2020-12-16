@@ -9,9 +9,9 @@ from absl import logging
 
 FLAGS = flags.FLAGS
 
-flags.DEFINE_string("multiwoz21_data_dir", "",
+flags.DEFINE_string("multiwoz21_data_dir", None,
                     "Path of the MultiWOZ 2.1 dataset.")
-flags.DEFINE_string("output_file", "", "Output file path in MultiWOZ format.")
+flags.DEFINE_string("output_file", None, "Output file path in MultiWOZ format.")
 
 _UNTRACKED_SLOTS = frozenset({
     "taxi-bookphone", "train-booktrainid", "taxi-booktype",
@@ -19,6 +19,7 @@ _UNTRACKED_SLOTS = frozenset({
     "train-bookreference", "hospital-booktime"
 })
 _DIR_PATH = os.path.dirname(os.path.abspath(__file__))
+flags.mark_flags_as_required(["multiwoz21_data_dir", "output_file"])
 
 
 def get_slot_name(slot_name, service_name, in_book_field=False):
@@ -73,7 +74,11 @@ def main(argv):
     with open(file_name, "r") as f:
       dialogues = json.load(f)
       for dialogue in dialogues:
-        clean_data[dialogue["dialogue_id"]] =dialogue
+        clean_data[dialogue["dialogue_id"]] = dialogue
+  # Load action file.
+  action_file = os.path.join(_DIR_PATH, "dialog_acts.json")
+  with open(action_file, "r") as f:
+    action_data = json.load(f)
 
   for dialogue_id in multiwoz_data:
     dialogue = multiwoz_data[dialogue_id]["log"]
@@ -81,6 +86,13 @@ def main(argv):
     for i, turn in enumerate(dialogue):
       # Update the utterance.
       turn["text"] = clean_dialogue["turns"][i]["utterance"]
+      dialog_act = {}
+      span_info = []
+      if str(i) in action_data[dialogue_id]:
+        dialog_act = action_data[dialogue_id][str(i)]["dialog_act"]
+        span_info = action_data[dialogue_id][str(i)]["span_info"]
+      turn["dialog_act"] = dialog_act
+      turn["span_info"] = span_info
       # Skip user turns because states are written in the system turns.
       if i % 2 == 0:
         continue
