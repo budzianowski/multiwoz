@@ -4,6 +4,10 @@ This dataset consists of a schema file `schema.json` describing the ontology and
 dialogue files `dialogues_*.json` of dialogue data under the `train`, `dev`, and
 `test` folders.
 
+**Notes:**
+
+- Compared to MultiWOZ 2.1, we remove `SNG01862.json` as it's an invalid dialogue.
+
 ## Schema file
 
 `schema.json` defines the new ontology using the schema representation in the
