@@ -79,9 +79,13 @@ def main(argv):
   action_file = os.path.join(_DIR_PATH, "dialog_acts.json")
   with open(action_file, "r") as f:
     action_data = json.load(f)
-
-  for dialogue_id in multiwoz_data:
+  dialogue_ids = list(multiwoz_data.keys())
+  for dialogue_id in dialogue_ids:
     dialogue = multiwoz_data[dialogue_id]["log"]
+    if dialogue_id not in clean_data:
+      logging.info("Dialogue %s doesn't exist in MultiWOZ 2.2.", dialogue_id)
+      del multiwoz_data[dialogue_id]
+      continue
     clean_dialogue = clean_data[dialogue_id]
     for i, turn in enumerate(dialogue):
       # Update the utterance.
@@ -102,7 +106,7 @@ def main(argv):
       format_states(clean_states, turn["metadata"])
   with open(FLAGS.output_file, "w") as f:
     json.dump(multiwoz_data, f, indent=2, separators=(",", ": "), sort_keys=True)
-  logging.info('Finish writing %d dialogues', len(multiwoz_data))
+  logging.info("Finish writing %d dialogues", len(multiwoz_data))
 
 
 if __name__ == "__main__":
