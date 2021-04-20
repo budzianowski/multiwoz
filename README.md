@@ -238,4 +238,4 @@ MultiWOZ is an open source toolkit for building end-to-end trainable task-orient
 It is released by Paweł Budzianowski from Cambridge Dialogue Systems Group under Apache License 2.0.
 
 # Bug Report
-If you have found any bugs in the code, please contact: pfb30 at cam dot ac dot uk
+If you have found any bugs in the code, please contact: budzianowski at gmail dot com
