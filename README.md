@@ -23,6 +23,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 3. There is no 1-to-1 mapping between dialogue acts and sentences.
 4. There is no dialogue state tracking labels for police and hospital as these domains are very simple. However, there are no dialogues with these domains in validation and testing sets either.
 5. For the dialogue state tracking experiments please follow the datat processing and scoring scripts from the [TRADE](https://github.com/jasonwu0731/trade-dst) model (Wu et al. 2019).
+6. For the response generation evaluation please consider using the scripts from [this repository](https://github.com/Tomiinek/MultiWOZ_Evaluation).
 
 <h2>Benchmarks</h2>
 <h3>Belief Tracking</h3>
