@@ -24,7 +24,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 # :trophy: Benchmarks
 ## Dialog State Tracking
 
-:bangbang: **For the DST experiments please follow the datat processing and scoring scripts from [TRADE (Wu et al. 2019)](https://github.com/jasonwu0731/trade-dst).**
+:bangbang: **For the DST experiments please follow the data processing and scoring scripts from the [TRADE model](https://github.com/jasonwu0731/trade-dst).**
 
 <div class="datagrid" style="width:500px;">
 <table>
@@ -60,7 +60,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 
 ## Response Generation
 
-:bangbang: **For the response generation evaluation please see and use the scoring scripts from [this repository](https://github.com/Tomiinek/MultiWOZ_Evaluation) (Nekvinda & Dušek 2021).** The following tables show numbers reported in current works. However, these numbers may not be comparable directly because of inconsistencies in the evaluation scripts.
+:bangbang: **For the response generation evaluation please see and use the scoring scripts from [this repository](https://github.com/Tomiinek/MultiWOZ_Evaluation).** The following tables show numbers reported in current works. However, these numbers may not be comparable directly because of inconsistencies in the evaluation scripts.
 
 ### Policy Optimization
 
