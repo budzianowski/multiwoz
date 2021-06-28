@@ -60,7 +60,9 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 
 ## Response Generation
 
-:bangbang: **For the response generation evaluation please see and use the scoring scripts from [this repository](https://github.com/Tomiinek/MultiWOZ_Evaluation).** The following tables show numbers reported in current works. However, these numbers may not be comparable directly because of inconsistencies in the evaluation scripts.
+:bangbang: **For the response generation evaluation please see and use the scoring scripts from [this repository](https://github.com/Tomiinek/MultiWOZ_Evaluation).** 
+
+:bangbang: The following tables show numbers reported in current works. However, these numbers may not be comparable directly because of inconsistencies in the evaluation scripts.
 
 ### Policy Optimization
 
