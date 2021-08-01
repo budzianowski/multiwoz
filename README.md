@@ -121,6 +121,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://arxiv.org/pdf/2012.03539.pdf">UBAR</a> (Yang et al. 2020)</td><td>94.00</td><td> 83.60</td><td> 17.20</td><td> 92.70</td><td> 81.00</td><td> 16.70</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2006.06814.pdf">HDNO</a> (Wang et al. 2020)</td><td>96.40</td><td>84.70</td><td>18.85</td><td>92.80</td><td>83.00</td><td> 18.97</td></tr>
 <tr><td><a href="https://www.aclweb.org/anthology/2020.coling-main.41.pdf">LAVA</a> (Lubis et al. 2020)</td><td>97.50</td><td>94.80</td><td>12.10</td><td>96.39</td><td>83.57</td><td>14.02</td></tr>
+<tr><td><a href="https://aclanthology.org/2021.acl-long.13.pdf">JOUST</a> (Tseng et al. 2021)</td><td>94.70</td><td>86.70</td><td>18.70</td><td></td><td></td><td></td></tr>
 <tfoot> </tfoot>
 </tbody>
 </table>
@@ -137,6 +138,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://arxiv.org/pdf/2009.08115.pdf">LABES-S2S</a> (Zhang et al. 2020)</td><td></td><td></td><td> </td><td>78.07 </td><td> 67.06</td><td> 18.3</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td>84.4</td><td>70.1</td><td> 15.01</td><td> </td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2103.06648.pdf">DoTS</a> (Jeon et al. 2021)</td><td>86.59</td><td>74.14</td><td>15.06</td><td>86.65</td><td>74.18</td><td>15.90</td></tr>
+<tr><td><a href="https://aclanthology.org/2021.acl-long.13.pdf">JOUST</a> (Tseng et al. 2021)</td><td>83.20</td><td>73.50</td><td>17.60</td><td> </td><td> </td><td> </td></tr>
  <tr><td><a href="https://arxiv.org/pdf/2005.05298.pdf">SOLOIST</a> (Peng et al. 2020)</td><td>85.50</td><td>72.90</td><td> 16.54</td><td> </td><td></td><td> </td></tr>
   <tr><td><a href="https://arxiv.org/pdf/2009.12005.pdf">MinTL-BART</a> (Lin et al. 2020)</td><td>84.88</td><td>74.91</td><td> 17.89</td><td> </td><td></td><td> </td></tr>
  <tr><td><a href="https://www.aclweb.org/anthology/2020.coling-main.41.pdf">LAVA</a> (Lubis et al. 2020)</td><td>91.80</td><td>81.80</td><td>12.03</td><td> </td><td> </td><td> </td></tr>
