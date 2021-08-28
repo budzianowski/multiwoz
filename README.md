@@ -122,6 +122,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://arxiv.org/pdf/2006.06814.pdf">HDNO</a> (Wang et al. 2020)</td><td>96.40</td><td>84.70</td><td>18.85</td><td>92.80</td><td>83.00</td><td> 18.97</td></tr>
 <tr><td><a href="https://www.aclweb.org/anthology/2020.coling-main.41.pdf">LAVA</a> (Lubis et al. 2020)</td><td>97.50</td><td>94.80</td><td>12.10</td><td>96.39</td><td>83.57</td><td>14.02</td></tr>
 <tr><td><a href="https://aclanthology.org/2021.acl-long.13.pdf">JOUST</a> (Tseng et al. 2021)</td><td>94.70</td><td>86.70</td><td>18.70</td><td></td><td></td><td></td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>96.80</td><td>87.30</td><td>19.10</td><td></td><td></td><td></td></tr>
 <tfoot> </tfoot>
 </tbody>
 </table>
@@ -145,6 +146,7 @@ The following tables show older numbers which may not be comparable directly bec
  <tr><td><a href="https://arxiv.org/pdf/2103.10518.pdf">NoisyChannel</a> (Liu et al. 2021)</td><td>86.90</td><td>76.20</td><td>20.58</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2012.03539.pdf">UBAR</a> (Yang et al. 2020)</td><td>95.40</td><td> 80.70</td><td> 17.00</td><td> 95.70</td><td> 81.80</td><td> 16.50</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2009.10447.pdf">SUMBT+LaRL</a> (Lee et al. 2020)</td><td>92.20</td><td> 85.40</td><td> 17.90</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>94.59</td><td>85.59</td><td>17.96</td><td> </td><td> </td><td> </td></tr>
  <tfoot> </tfoot>
 </tbody>
 </table>
