@@ -1,5 +1,5 @@
 torch
 numpy
-nltk
+nltk==3.4.5
 scipy
 tqdm
