@@ -146,6 +146,7 @@ The following tables show older numbers which may not be comparable directly bec
   <tr><td><a href="https://arxiv.org/pdf/2009.12005.pdf">MinTL-BART</a> (Lin et al. 2020)</td><td>84.88</td><td>74.91</td><td> 17.89</td><td> </td><td></td><td> </td></tr>
  <tr><td><a href="https://www.aclweb.org/anthology/2020.coling-main.41.pdf">LAVA</a> (Lubis et al. 2020)</td><td>91.80</td><td>81.80</td><td>12.03</td><td> </td><td> </td><td> </td></tr>
  <tr><td><a href="https://arxiv.org/pdf/2103.10518.pdf">NoisyChannel</a> (Liu et al. 2021)</td><td>86.90</td><td>76.20</td><td>20.58</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2109.14739.pdf">PPTOD</a> (Su et al. 2021)</td><td>89.20</td><td>79.40</td><td>18.62</td><td>87.09</td><td>79.08</td><td> 19.17</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2012.03539.pdf">UBAR</a> (Yang et al. 2020)</td><td>95.40</td><td> 80.70</td><td> 17.00</td><td> 95.70</td><td> 81.80</td><td> 16.50</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2009.10447.pdf">SUMBT+LaRL</a> (Lee et al. 2020)</td><td>92.20</td><td> 85.40</td><td> 17.90</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>94.59</td><td>85.59</td><td>17.96</td><td> </td><td> </td><td> </td></tr>
