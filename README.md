@@ -50,7 +50,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <tr><td><a href="https://www.aaai.org/Papers/AAAI/2020GB/AAAI-ChenL.10030.pdf">SST</a> (Chen et al. 2020)</td><td></td><td></td><td>55.23</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2005.02877">TripPy</a> (Heck et al. 2020)</td><td></td><td></td><td>55.3</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td></td><td></td><td>56.45</td><td></td><td></td><td></td></tr>
- <tr><td><a href="https://arxiv.org/pdf/2109.14739.pdf">PPTOD</a> (Su et al. 2021)</td><td></td><td>53.89</td><td>57.45</td><td></td><td></td><td></td></tr>
+ <tr><td><a href="https://arxiv.org/pdf/2109.14739.pdf">PPTOD</a> (Su et al. 2021)</td><td>53.89</td><td></td><td>57.45</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2009.13570.pdf">ConvBERT-DG + Multi</a> (Mehri et al. 2020)</td><td></td><td></td><td>58.7</td><td></td><td></td><td></td></tr>
  <tr><td><a href="https://openreview.net/forum?id=oyZxhRI2RiE">TripPy + SCoRe</a> (Yu et al. 2021)</td><td></td><td></td><td>60.48</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2010.12850.pdf">TripPy + CoCoAug</a> (Li and  Yavuz et al. 2020)</td><td></td><td></td><td>60.53</td><td></td><td></td><td></td></tr>
