@@ -75,16 +75,16 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
 
-| Model              | BLEU | Inform  | Success  | Av. len. | CBE | #uniq. words | #uniq. 3-grams |
-| ------------------ | -----:| -------:| --------:| ---------:| -----------------:| -------------:| -------------:| 
-| DAMD ([paper](https://arxiv.org/abs/1911.10484)\|[code](https://github.com/thu-spmi/damd-multiwoz))  | 16.4 | 57.9 | 47.6 | 14.27 | 1.65 | 212  | 1755  |
-| MinTL ([paper](https://arxiv.org/pdf/2009.12005.pdf)\|[code](https://github.com/zlinao/MinTL)) | **19.4** | 73.7 | 65.4 | 14.78 | 1.81 | 297  | 2525  |
-| UBAR ([paper](https://arxiv.org/abs/2012.03539)\|[code](https://github.com/TonyNemo/UBAR-MultiWOZ))  | 17.6 | **83.4** | 70.3 | 13.54 | 2.10 | 478  | 5238  |
+| Model              | BLEU | Inform  | Success  | Combined Score|Av. len. | CBE | #uniq. words | #uniq. 3-grams |
+| ------------------ | -----:| -------:| --------:| ---------:|---------:| -----------------:| -------------:| -------------:| 
+| DAMD ([paper](https://arxiv.org/abs/1911.10484)\|[code](https://github.com/thu-spmi/damd-multiwoz))  | 16.4 | 57.9 | 47.6 | |14.27 | 1.65 | 212  | 1755  |
+| MinTL ([paper](https://arxiv.org/pdf/2009.12005.pdf)\|[code](https://github.com/zlinao/MinTL)) | **19.4** | 73.7 | 65.4 | |14.78 | 1.81 | 297  | 2525  |
+| UBAR ([paper](https://arxiv.org/abs/2012.03539)\|[code](https://github.com/TonyNemo/UBAR-MultiWOZ))  | 17.6 | **83.4** | 70.3 | |13.54 | 2.10 | 478  | 5238  |
 | SOLOIST ([paper](https://arxiv.org/abs/2005.05298))  | 13.6 | 82.3 | 72.4 | 18.45 | **2.41** | **615**  | **7923**  |
-| AuGPT ([paper](https://arxiv.org/abs/2102.05126)\|[code](https://github.com/ufal/augpt)) | 16.8 | 76.6 | 60.5 | 12.90 | 2.15 | 608  | 5843  |
-| LABES ([paper](https://arxiv.org/pdf/2009.08115v3.pdf)\|[code](https://github.com/thu-spmi/LABES)) | 18.9 | 68.5 | 58.1 | 14.20 | 1.83 | 374  | 3228  |
-| DoTS ([paper](https://arxiv.org/pdf/2103.06648.pdf))  | 16.8 | 80.4 | 68.7 | 14.66 | 2.10 | 411  | 5162  |
-| PPTOD ([paper](https://arxiv.org/abs/2109.14739)\|[code](https://github.com/awslabs/pptod))  | 18.2 | 83.1 | **72.7** | 12.73 | 1.88 | 301  | 2538  |
+| AuGPT ([paper](https://arxiv.org/abs/2102.05126)\|[code](https://github.com/ufal/augpt)) | 16.8 | 76.6 | 60.5 | |12.90 | 2.15 | 608  | 5843  |
+| LABES ([paper](https://arxiv.org/pdf/2009.08115v3.pdf)\|[code](https://github.com/thu-spmi/LABES)) | 18.9 | 68.5 | 58.1 | |14.20 | 1.83 | 374  | 3228  |
+| DoTS ([paper](https://arxiv.org/pdf/2103.06648.pdf))  | 16.8 | 80.4 | 68.7 | |14.66 | 2.10 | 411  | 5162  |
+| PPTOD ([paper](https://arxiv.org/abs/2109.14739)\|[code](https://github.com/awslabs/pptod))  | 18.2 | 83.1 | **72.7** | |12.73 | 1.88 | 301  | 2538  |
 
 **Policy optimization models**, i.e. those that use also the ground-truth dialog states.
 
