@@ -90,12 +90,12 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 
 | Model              | BLEU | Inform  | Success  | Combined Score|Av. len. | CBE | #uniq. words | #uniq. 3-grams |
 | ------------------ | -----:| -------:| --------:| ---------:|---------:| -----------------:| -------------:| -------------:|
-| MarCo ([paper](https://arxiv.org/pdf/2004.12363.pdf)\|[code](https://github.com/InitialBug/MarCo-Dialog))   | 17.3 | 94.5 | 87.2 | |16.01 | **1.94** | 319 | **3002** | 
-| HDSA ([paper](https://arxiv.org/pdf/1905.12866.pdf)\|[code](https://github.com/wenhuchen/HDSA-Dialog))    | **20.7** | 87.9 | 79.4 | |14.42 | 1.64 | 259 | 2019 |
-| HDNO ([paper](https://arxiv.org/pdf/2006.06814.pdf)\|[code](https://github.com/mikezhang95/HDNO))    | 17.8 | 93.3 | 83.4 | |14.96 | 0.84 | 103 | 315  |
-| SFN ([paper](https://arxiv.org/pdf/1907.10016.pdf)\|[code](https://github.com/Shikib/structured_fusion_networks))     | 14.1 | 93.4 | 82.3 | |14.93 | 1.63 | 188 | 1218 |
-| UniConv ([paper](https://arxiv.org/pdf/2004.14307.pdf)\|[code](https://github.com/henryhungle/UniConv)) | 18.1 | 66.7 | 58.7 | |14.17 | 1.79 | **338** | 2932 |
-| LAVA ([paper](https://arxiv.org/abs/2011.09378)\|[code](https://gitlab.cs.uni-duesseldorf.de/general/dsml/lava-public/-/tree/master/experiments_woz/sys_config_log_model/2020-05-12-14-51-49-actz_cat))    | 10.8 | **95.9** | **93.5** | |13.28 | 1.27 | 176 | 708  |
+| MarCo ([paper](https://arxiv.org/pdf/2004.12363.pdf)\|[code](https://github.com/InitialBug/MarCo-Dialog))   | 17.3 | 94.5 | 87.2 | **108.1**|16.01 | **1.94** | 319 | **3002** | 
+| HDSA ([paper](https://arxiv.org/pdf/1905.12866.pdf)\|[code](https://github.com/wenhuchen/HDSA-Dialog))    | **20.7** | 87.9 | 79.4 | 104.4|14.42 | 1.64 | 259 | 2019 |
+| HDNO ([paper](https://arxiv.org/pdf/2006.06814.pdf)\|[code](https://github.com/mikezhang95/HDNO))    | 17.8 | 93.3 | 83.4 | 106.1|14.96 | 0.84 | 103 | 315  |
+| SFN ([paper](https://arxiv.org/pdf/1907.10016.pdf)\|[code](https://github.com/Shikib/structured_fusion_networks))     | 14.1 | 93.4 | 82.3 | 101.9|14.93 | 1.63 | 188 | 1218 |
+| UniConv ([paper](https://arxiv.org/pdf/2004.14307.pdf)\|[code](https://github.com/henryhungle/UniConv)) | 18.1 | 66.7 | 58.7 | 80.8|14.17 | 1.79 | **338** | 2932 |
+| LAVA ([paper](https://arxiv.org/abs/2011.09378)\|[code](https://gitlab.cs.uni-duesseldorf.de/general/dsml/lava-public/-/tree/master/experiments_woz/sys_config_log_model/2020-05-12-14-51-49-actz_cat))    | 10.8 | **95.9** | **93.5** | 105.5|13.28 | 1.27 | 176 | 708  |
 
 
 ### Older results
