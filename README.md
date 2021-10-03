@@ -72,7 +72,6 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | Reference corpus &nbsp; | -    | 93.7 | 90.9 | 14.00 | 3.01 | 1407 | 23877 | 
 
 **End-to-end models**, i.e. those that use only the context as input. 
-
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
 
 | Model              | BLEU | Inform  | Success  | Combined Score|Av. len. | CBE | #uniq. words | #uniq. 3-grams |
