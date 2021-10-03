@@ -89,7 +89,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
 
 | Model              | BLEU | Inform  | Success  | Combined Score|Av. len. | CBE | #uniq. words | #uniq. 3-grams |
-| ------------------ | -----:| -------:| --------:| ---------:|---------:| -----------------:| -------------:| -------------:|
+| ------------------ | :-----:| :-------:| :--------:| :---------:|:---------:| :-----------------:| :-------------:| :-------------:|
 | MarCo ([paper](https://arxiv.org/pdf/2004.12363.pdf)\|[code](https://github.com/InitialBug/MarCo-Dialog))   | 17.3 | 94.5 | 87.2 | **108.1**|16.01 | **1.94** | 319 | **3002** | 
 | HDSA ([paper](https://arxiv.org/pdf/1905.12866.pdf)\|[code](https://github.com/wenhuchen/HDSA-Dialog))    | **20.7** | 87.9 | 79.4 | 104.4|14.42 | 1.64 | 259 | 2019 |
 | HDNO ([paper](https://arxiv.org/pdf/2006.06814.pdf)\|[code](https://github.com/mikezhang95/HDNO))    | 17.8 | 93.3 | 83.4 | 106.1|14.96 | 0.84 | 103 | 315  |
