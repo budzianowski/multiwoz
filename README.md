@@ -128,6 +128,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://www.aclweb.org/anthology/2020.coling-main.41.pdf">LAVA</a> (Lubis et al. 2020)</td><td>97.50</td><td>94.80</td><td>12.10</td><td>96.39</td><td>83.57</td><td>14.02</td></tr>
 <tr><td><a href="https://aclanthology.org/2021.acl-long.13.pdf">JOUST</a> (Tseng et al. 2021)</td><td>94.70</td><td>86.70</td><td>18.70</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>96.80</td><td>87.30</td><td>19.10</td><td></td><td></td><td></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2111.14592">GALAXY</a> (He et al. 2021)</td><td>94.8</td><td>85.7</td><td>19.93</td><td>94.8</td><td>86.2</td><td>20.29</td></tr>
 <tfoot> </tfoot>
 </tbody>
 </table>
@@ -155,6 +156,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://arxiv.org/pdf/2009.10447.pdf">SUMBT+LaRL</a> (Lee et al. 2020)</td><td>92.20</td><td> 85.40</td><td> 17.90</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>94.59</td><td>85.59</td><td>17.96</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://aclanthology.org/2021.findings-emnlp.112.pdf">MTTOD</a> (Lee 2021)</td><td>90.99</td><td> 82.58</td><td> 20.25</td><td> 90.99</td><td> 82.08</td><td> 19.68</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2111.14592">GALAXY</a> (He et al. 2021)</td><td>94.40</td><td> 85.30</td><td> 20.50</td><td> 95.30</td><td> 86.20</td><td> 20.01</td></tr>
  <tfoot> </tfoot>
 </tbody>
 </table>
