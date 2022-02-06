@@ -290,11 +290,11 @@ def createDelexData():
     dic = delexicalize.prepareSlotValuesIndependent()
     delex_data = {}
 
-    fin1 = file('data/multi-woz/data.json')
-    data = json.load(fin1)
+    with open('data/multi-woz/data.json') as fin1:
+        data = json.load(fin1)
 
-    fin2 = file('data/multi-woz/dialogue_acts.json')
-    data2 = json.load(fin2)
+    with open('data/multi-woz/dialogue_acts.json') as fin2:
+        data2 = json.load(fin2)
 
     cnt = 10
 
@@ -346,16 +346,14 @@ def divideData(data):
     """Given test and validation sets, divide
     the data for three different sets"""
     testListFile = []
-    fin = file('data/multi-woz/testListFile.json')
-    for line in fin:
-        testListFile.append(line[:-1])
-    fin.close()
+    with open('data/multi-woz/testListFile.json') as fin:
+        for line in fin:
+            testListFile.append(line[:-1])
 
     valListFile = []
-    fin = file('data/multi-woz/valListFile.json')
-    for line in fin:
-        valListFile.append(line[:-1])
-    fin.close()
+    with open('data/multi-woz/valListFile.json') as fin:
+        for line in fin:
+            valListFile.append(line[:-1])
 
     trainListFile = open('data/trainListFile', 'w')
 
