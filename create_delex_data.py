@@ -88,24 +88,24 @@ def addBookingPointer(task, turn, pointer_vector):
     # Booking pointer
     rest_vec = np.array([1, 0])
     if task['goal']['restaurant']:
-        if turn['metadata']['restaurant'].has_key("book"):
-            if turn['metadata']['restaurant']['book'].has_key("booked"):
+        if "book" in turn['metadata']['restaurant'].keys():
+            if "booked" in turn['metadata']['restaurant']['book'].keys():
                 if turn['metadata']['restaurant']['book']["booked"]:
                     if "reference" in turn['metadata']['restaurant']['book']["booked"][0]:
                         rest_vec = np.array([0, 1])
 
     hotel_vec = np.array([1, 0])
     if task['goal']['hotel']:
-        if turn['metadata']['hotel'].has_key("book"):
-            if turn['metadata']['hotel']['book'].has_key("booked"):
+        if "book" in turn['metadata']['hotel'].keys():
+            if "booked" in turn['metadata']['hotel']['book'].keys():
                 if turn['metadata']['hotel']['book']["booked"]:
                     if "reference" in turn['metadata']['hotel']['book']["booked"][0]:
                         hotel_vec = np.array([0, 1])
 
     train_vec = np.array([1, 0])
     if task['goal']['train']:
-        if turn['metadata']['train'].has_key("book"):
-            if turn['metadata']['train']['book'].has_key("booked"):
+        if "book" in turn['metadata']['train'].keys():
+            if "booked" in turn['metadata']['train']['book'].keys():
                 if turn['metadata']['train']['book']["booked"]:
                     if "reference" in turn['metadata']['train']['book']["booked"][0]:
                         train_vec = np.array([0, 1])
