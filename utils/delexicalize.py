@@ -1,6 +1,5 @@
+import json
 import re
-
-import simplejson as json
 
 from nlp import normalize
 
