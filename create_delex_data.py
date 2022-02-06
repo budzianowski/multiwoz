@@ -236,8 +236,8 @@ def get_dial(dialogue):
 
 
 def createDict(word_freqs):
-    words = word_freqs.keys()
-    freqs = word_freqs.values()
+    words = list(word_freqs.keys())
+    freqs = list(word_freqs.values())
 
     sorted_idx = np.argsort(freqs)
     sorted_words = [words[ii] for ii in sorted_idx[::-1]]
@@ -249,15 +249,12 @@ def createDict(word_freqs):
     PAD = '_PAD'
     extra_tokens = [_GO, EOS, UNK, PAD]
 
-    worddict = OrderedDict()
+    worddict = dict()
     for ii, ww in enumerate(extra_tokens):
         worddict[ww] = ii
-    for ii, ww in enumerate(sorted_words):
+    for ii in range(DICT_SIZE - len(extra_tokens)):
+        ww = sorted_words[ii]
         worddict[ww] = ii + len(extra_tokens)
-
-    for key, idx in worddict.items():
-        if idx >= DICT_SIZE:
-            del worddict[key]
 
     return worddict
 
