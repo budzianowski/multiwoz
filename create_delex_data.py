@@ -401,14 +401,14 @@ def divideData(data):
                     word_freqs_sys[w] += 1
 
     # save all dialogues
-    with open('data/val_dials.json', 'wb') as f:
-        json.dump(val_dials, f, indent=4)
+    with open('data/val_dials.json', 'w') as f:
+        json.dump(val_dials, f)
 
-    with open('data/test_dials.json', 'wb') as f:
-        json.dump(test_dials, f, indent=4)
+    with open('data/test_dials.json', 'w') as f:
+        json.dump(test_dials, f)
 
-    with open('data/train_dials.json', 'wb') as f:
-        json.dump(train_dials, f, indent=4)
+    with open('data/train_dials.json', 'w') as f:
+        json.dump(train_dials, f)
 
     return word_freqs_usr, word_freqs_sys
 
@@ -430,14 +430,14 @@ def buildDictionaries(word_freqs_usr, word_freqs_sys):
             dic[v] = k
         idx2words.append(dic)
 
-    with open('data/input_lang.index2word.json', 'wb') as f:
-        json.dump(idx2words[0], f, indent=2)
-    with open('data/input_lang.word2index.json', 'wb') as f:
-        json.dump(dicts[0], f,indent=2)
-    with open('data/output_lang.index2word.json', 'wb') as f:
-        json.dump(idx2words[1], f,indent=2)
-    with open('data/output_lang.word2index.json', 'wb') as f:
-        json.dump(dicts[1], f,indent=2)
+    with open('data/input_lang.index2word.json', 'w') as f:
+        json.dump(idx2words[0], f)
+    with open('data/input_lang.word2index.json', 'w') as f:
+        json.dump(dicts[0], f)
+    with open('data/output_lang.index2word.json', 'w') as f:
+        json.dump(idx2words[1], f)
+    with open('data/output_lang.word2index.json', 'w') as f:
+        json.dump(dicts[1], f)
 
 
 def main():
