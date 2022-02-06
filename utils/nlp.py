@@ -240,10 +240,10 @@ if __name__ == '__main__':
     text = "restaurant's CB39AL one seven"
     text = "I'm I'd restaurant's CB39AL 099939399 one seven"
     text = "ndd 19.30 nndd"
-    #print re.match("(\d+).(\d+)", text)
+    # print(re.match("(\d+).(\d+)", text))
     m = re.findall("(\d+\.\d+)", text)
-    print m
-    #print m[0].strip('.')
-    print re.sub('\.', '', m[0])
-    #print m.groups()
-    #print text
+    print(m)
+    # print(m[0].strip('.'))
+    print(re.sub('\.', '', m[0]))
+    # print(m.groups())
+    # print(text)

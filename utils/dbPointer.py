@@ -56,7 +56,7 @@ def queryResult(domain, turn):
     sql_query = "select * from {}".format(domain)
 
     flag = True
-    #print turn['metadata'][domain]['semi']
+    #print(turn['metadata'][domain]['semi'])
     for key, val in turn['metadata'][domain]['semi'].items():
         if val == "" or val == "dont care" or val == 'not mentioned' or val == "don't care" or val == "dontcare" or val == "do n't care":
             pass
@@ -84,8 +84,8 @@ def queryResult(domain, turn):
                     sql_query += r" and " + key + "=" + r"'" + val2 + r"'"
 
     #try:  # "select * from attraction  where name = 'queens college'"
-    #print sql_query
-    #print domain
+    #print(sql_query)
+    #print(domain)
     num_entities = len(dbs[domain].execute(sql_query).fetchall())
 
     return num_entities

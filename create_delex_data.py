@@ -183,8 +183,8 @@ def analyze_dialogue(dialogue, maxlen):
     d = dialogue
     # do all the necessary postprocessing
     if len(d['log']) % 2 != 0:
-        #print path
-        print 'odd # of turns'
+        # print(path)
+        print('odd # of turns')
         return None  # odd number of turns, wrong dialogue
     d_pp = {}
     d_pp['goal'] = d['goal']  # for now we just copy the goal
@@ -192,22 +192,22 @@ def analyze_dialogue(dialogue, maxlen):
     sys_turns = []
     for i in range(len(d['log'])):
         if len(d['log'][i]['text'].split()) > maxlen:
-            print 'too long'
+            print('too long')
             return None  # too long sentence, wrong dialogue
         if i % 2 == 0:  # usr turn
             if 'db_pointer' not in d['log'][i]:
-                print 'no db'
+                print('no db')
                 return None  # no db_pointer, probably 2 usr turns in a row, wrong dialogue
             text = d['log'][i]['text']
             if not is_ascii(text):
-                print 'not ascii'
+                print('not ascii')
                 return None
             #d['log'][i]['tkn_text'] = self.tokenize_sentence(text, usr=True)
             usr_turns.append(d['log'][i])
         else:  # sys turn
             text = d['log'][i]['text']
             if not is_ascii(text):
-                print 'not ascii'
+                print('not ascii')
                 return None
             #d['log'][i]['tkn_text'] = self.tokenize_sentence(text, usr=False)
             belief_summary = get_summary_bstate(d['log'][i]['metadata'])
@@ -300,7 +300,7 @@ def createDelexData():
 
     for dialogue_name in tqdm(data):
         dialogue = data[dialogue_name]
-        #print dialogue_name
+        # print(dialogue_name)
 
         idx_acts = 1
 
@@ -327,7 +327,7 @@ def createDelexData():
                 # add booking pointer
                 pointer_vector = addBookingPointer(dialogue, turn, pointer_vector)
 
-                #print pointer_vector
+                # print(pointer_vector)
                 dialogue['log'][idx - 1]['db_pointer'] = pointer_vector.tolist()
 
             # FIXING delexicalization:
@@ -368,7 +368,7 @@ def divideData(data):
     word_freqs_sys = OrderedDict()
     
     for dialogue_name in tqdm(data):
-        #print dialogue_name
+        # print(dialogue_name)
         dial = get_dial(data[dialogue_name])
         if dial:
             dialogue = {}
