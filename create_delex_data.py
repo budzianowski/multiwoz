@@ -37,7 +37,7 @@ def fixDelex(filename, data, data2, idx, idx_acts):
     except:
         return data
 
-    if not isinstance(turn, str) and not isinstance(turn, unicode):
+    if not isinstance(turn, str) and not isinstance(turn, bytes):
         for k, act in turn.items():
             if 'Attraction' in k:
                 if 'restaurant_' in data['log'][idx]['text']:
