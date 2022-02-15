@@ -57,6 +57,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <tr><td><a href="https://arxiv.org/abs/2106.00291">TripPy + SaCLog</a> (Dai et al. 2021)</td><td></td><td></td><td>60.61</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://aclanthology.org/2021.emnlp-main.620.pdf">KAGE-GPT2</a> (Lin et al, 2021)</td><td>54.86</td><td>97.47</td><td></td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://aclanthology.org/2021.nlp4convai-1.8/">AG-DST</a> (Tian et al. 2021)</td><td></td><td></td><td></td><td></td><td>57.26</td><td></td></tr>
+<tr><td><a href="https://aclanthology.org/2021.emnlp-main.404.pdf">SDP-DST</a> (Lee et al. 2021)</td><td></td><td></td><td>56.66<td></td><td>57.60</td><td></td></tr>
 </tbody>
 </table>
 </div>
