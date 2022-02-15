@@ -273,7 +273,7 @@ The final parameters were:
 
 # License
 MultiWOZ is an open source toolkit for building end-to-end trainable task-oriented dialogue models.
-It is released by Paweł Budzianowski from Cambridge Dialogue Systems Group under Apache License 2.0.
+It is released by Paweł Budzianowski from Cambridge Dialogue Systems Group under the MIT License.
 
 # Bug Report
 If you have found any bugs in the code, please contact: budzianowski at gmail dot com
