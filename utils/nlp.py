@@ -7,12 +7,11 @@ from nltk.util import ngrams
 timepat = re.compile("\d{1,2}[:]\d{1,2}")
 pricepat = re.compile("\d{1,3}[.]\d{1,2}")
 
-
-fin = file('utils/mapping.pair')
-replacements = []
-for line in fin.readlines():
-    tok_from, tok_to = line.replace('\n', '').split('\t')
-    replacements.append((' ' + tok_from + ' ', ' ' + tok_to + ' '))
+with open('utils/mapping.pair') as fin:
+    replacements = []
+    for line in fin.readlines():
+        tok_from, tok_to = line.replace('\n', '').split('\t')
+        replacements.append((' ' + tok_from + ' ', ' ' + tok_to + ' '))
 
 
 def insertSpace(token, text):
@@ -240,10 +239,10 @@ if __name__ == '__main__':
     text = "restaurant's CB39AL one seven"
     text = "I'm I'd restaurant's CB39AL 099939399 one seven"
     text = "ndd 19.30 nndd"
-    #print re.match("(\d+).(\d+)", text)
+    # print(re.match("(\d+).(\d+)", text))
     m = re.findall("(\d+\.\d+)", text)
-    print m
-    #print m[0].strip('.')
-    print re.sub('\.', '', m[0])
-    #print m.groups()
-    #print text
+    print(m)
+    # print(m[0].strip('.'))
+    print(re.sub('\.', '', m[0]))
+    # print(m.groups())
+    # print(text)

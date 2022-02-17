@@ -1,6 +1,5 @@
+import json
 import re
-
-import simplejson as json
 
 from nlp import normalize
 
@@ -28,9 +27,8 @@ def prepareSlotValuesIndependent():
     # read databases
     for domain in domains:
         try:
-            fin = file('db/' + domain + '_db.json')
-            db_json = json.load(fin)
-            fin.close()
+            with open('db/' + domain + '_db.json') as fin:
+                db_json = json.load(fin)
 
             for ent in db_json:
                 for key, val in ent.items():
@@ -103,9 +101,8 @@ def prepareSlotValuesIndependent():
             dic.append((normalize('Parkside Police Station'), '[' + domain + '_' + 'name' + ']'))
 
     # add at the end places from trains
-    fin = file('db/' + 'train' + '_db.json')
-    db_json = json.load(fin)
-    fin.close()
+    with open('db/' + 'train' + '_db.json') as fin:
+        db_json = json.load(fin)
 
     for ent in db_json:
         for key, val in ent.items():
