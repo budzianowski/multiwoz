@@ -82,12 +82,13 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | LABES ([paper](https://arxiv.org/pdf/2009.08115v3.pdf)\|[code](https://github.com/thu-spmi/LABES)) | 18.9 | 68.5 | 58.1 | 82.2|14.20 | 1.83 | 374  | 3228  |
 | DAMD ([paper](https://arxiv.org/abs/1911.10484)\|[code](https://github.com/thu-spmi/damd-multiwoz))  | 16.4 | 57.9 | 47.6 | 84.8|14.27 | 1.65 | 212  | 1755  |
 | AuGPT ([paper](https://arxiv.org/abs/2102.05126)\|[code](https://github.com/ufal/augpt)) | 16.8 | 76.6 | 60.5 |85.4 |12.90 | 2.15 | 608  | 5843  |
-| MinTL ([paper](https://arxiv.org/pdf/2009.12005.pdf)\|[code](https://github.com/zlinao/MinTL)) | **19.4** | 73.7 | 65.4 | 89.0|14.78 | 1.81 | 297  | 2525  |
+| MinTL ([paper](https://arxiv.org/pdf/2009.12005.pdf)\|[code](https://github.com/zlinao/MinTL)) | 19.4 | 73.7 | 65.4 | 89.0|14.78 | 1.81 | 297  | 2525  |
 | SOLOIST ([paper](https://arxiv.org/abs/2005.05298))  | 13.6 | 82.3 | 72.4 | 90.9|18.45 | **2.41** | **615**  | **7923**  |
 | DoTS ([paper](https://arxiv.org/pdf/2103.06648.pdf))  | 16.8 | 80.4 | 68.7 | 91.4|14.66 | 2.10 | 411  | 5162  |
 | UBAR ([paper](https://arxiv.org/abs/2012.03539)\|[code](https://github.com/TonyNemo/UBAR-MultiWOZ))  | 17.6 | 83.4 | 70.3 | 94.4|13.54 | 2.10 | 478  | 5238  |
 | PPTOD ([paper](https://arxiv.org/abs/2109.14739)\|[code](https://github.com/awslabs/pptod))  | 18.2 | 83.1 | 72.7 | 96.1|12.73 | 1.88 | 301  | 2538  |
 | MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | **85.9** | **76.5** | **100.2**|13.94 | 1.93 | 514  | 4066  |
+| GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |**19.64**| 85.4 | 75.7 |**100.2**| 13.39 | 1.75 | 295 | 2275 |
 
 **Policy optimization models**, i.e. those that use also the ground-truth dialog states.
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
@@ -99,7 +100,8 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | HDSA ([paper](https://arxiv.org/pdf/1905.12866.pdf)\|[code](https://github.com/wenhuchen/HDSA-Dialog))    | **20.7** | 87.9 | 79.4 | 104.4|14.42 | 1.64 | 259 | 2019 |
 | LAVA ([paper](https://arxiv.org/abs/2011.09378)\|[code](https://gitlab.cs.uni-duesseldorf.de/general/dsml/lava-public/-/tree/master/experiments_woz/sys_config_log_model/2020-05-12-14-51-49-actz_cat))    | 10.8 | **95.9** | **93.5** | 105.5|13.28 | 1.27 | 176 | 708  |
 | HDNO ([paper](https://arxiv.org/pdf/2006.06814.pdf)\|[code](https://github.com/mikezhang95/HDNO))    | 17.8 | 93.3 | 83.4 | 106.1|14.96 | 0.84 | 103 | 315  |
-| MarCo ([paper](https://arxiv.org/pdf/2004.12363.pdf)\|[code](https://github.com/InitialBug/MarCo-Dialog))   | 17.3 | 94.5 | 87.2 | **108.1**|16.01 | **1.94** | 319 | **3002** | 
+| MarCo ([paper](https://arxiv.org/pdf/2004.12363.pdf)\|[code](https://github.com/InitialBug/MarCo-Dialog))   | 17.3 | 94.5 | 87.2 | **108.1**|16.01 | **1.94** | 319 | **3002** |
+| GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) | 19.92 | 92.8 | 83.5 |**108.1**| 13.68 | 1.75 | 281 | 2344 |
 
 ### Older results
 
