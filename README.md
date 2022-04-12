@@ -87,7 +87,8 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | DoTS ([paper](https://arxiv.org/pdf/2103.06648.pdf))  | 16.8 | 80.4 | 68.7 | 91.4|14.66 | 2.10 | 411  | 5162  |
 | UBAR ([paper](https://arxiv.org/abs/2012.03539)\|[code](https://github.com/TonyNemo/UBAR-MultiWOZ))  | 17.6 | 83.4 | 70.3 | 94.4|13.54 | 2.10 | 478  | 5238  |
 | PPTOD ([paper](https://arxiv.org/abs/2109.14739)\|[code](https://github.com/awslabs/pptod))  | 18.2 | 83.1 | 72.7 | 96.1|12.73 | 1.88 | 301  | 2538  |
-| MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | **85.9** | **76.5** | **100.2**|13.94 | 1.93 | 514  | 4066  |
+| BORT ([paper](https://openreview.net/forum?id=QSjmoOagk-x))  | 17.9 | 85.5 | **77.4** | 99.4|14.91 | 1.88 | 294  | 2492  |
+| MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | **85.9** | 76.5 | **100.2**|13.94 | 1.93 | 514  | 4066  |
 | GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |**19.64**| 85.4 | 75.7 |**100.2**| 13.39 | 1.75 | 295 | 2275 |
 
 **Policy optimization models**, i.e. those that use also the ground-truth dialog states.
@@ -160,6 +161,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://arxiv.org/pdf/2009.10447.pdf">SUMBT+LaRL</a> (Lee et al. 2020)</td><td>92.20</td><td> 85.40</td><td> 17.90</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>94.59</td><td>85.59</td><td>17.96</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://aclanthology.org/2021.findings-emnlp.112.pdf">MTTOD</a> (Lee 2021)</td><td>90.99</td><td> 82.58</td><td> 20.25</td><td> 90.99</td><td> 82.08</td><td> 19.68</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=QSjmoOagk-x">BORT</a> (Sun et al. 2022)</td><td>93.80</td><td>85.80</td><td>18.50</td><td> </td><td> </td><td></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2111.14592">GALAXY</a> (He et al. 2021)</td><td>94.40</td><td> 85.30</td><td> 20.50</td><td> 95.30</td><td> 86.20</td><td> 20.01</td></tr>
  <tfoot> </tfoot>
 </tbody>
