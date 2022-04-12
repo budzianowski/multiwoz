@@ -161,6 +161,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://arxiv.org/pdf/2009.10447.pdf">SUMBT+LaRL</a> (Lee et al. 2020)</td><td>92.20</td><td> 85.40</td><td> 17.90</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>94.59</td><td>85.59</td><td>17.96</td><td> </td><td> </td><td> </td></tr>
 <tr><td><a href="https://aclanthology.org/2021.findings-emnlp.112.pdf">MTTOD</a> (Lee 2021)</td><td>90.99</td><td> 82.58</td><td> 20.25</td><td> 90.99</td><td> 82.08</td><td> 19.68</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=QSjmoOagk-x">BORT</a> (Sun et al. 2022)</td><td>93.80</td><td>85.80</td><td>18.50</td><td> </td><td> </td><td>
 <tr><td><a href="https://arxiv.org/abs/2111.14592">GALAXY</a> (He et al. 2021)</td><td>94.40</td><td> 85.30</td><td> 20.50</td><td> 95.30</td><td> 86.20</td><td> 20.01</td></tr>
  <tfoot> </tfoot>
 </tbody>
