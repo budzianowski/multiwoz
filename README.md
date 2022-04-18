@@ -67,6 +67,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 :bangbang: **For the response generation evaluation please see and use the scoring scripts from [this repository](https://github.com/Tomiinek/MultiWOZ_Evaluation).** 
 
 - See [this directory](https://github.com/Tomiinek/MultiWOZ_Evaluation/tree/master/predictions) for details about the raw generated predictions of other models.
+- Inform meaures whether the system provides an appropriate entity and Success measures whether the system answers all the requested attributes.
 - BLEU reported in these tables is calculated with references obtained from the *MultiWOZ 2.2 span annotations*.
 - CBE stands for *conditional bigram entropy*. 
 
@@ -74,7 +75,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | ------------------ | -----:| -------:| --------:| ---------:| -----------------:| -------------:| -------------:| 
 | Reference corpus &nbsp; | -    | 93.7 | 90.9 | 14.00 | 3.01 | 1407 | 23877 | 
 
-**End-to-end models**, i.e. those that use only the context as input. 
+**End-to-end models**, i.e. those that use only the dialogue context as input to generate responses. 
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
 
 | Model              | BLEU | Inform  | Success  | Combined Score |Av. len. | CBE | #uniq. words | #uniq. 3-grams |
@@ -91,7 +92,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | **85.9** | 76.5 | **100.2**|13.94 | 1.93 | 514  | 4066  |
 | GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |**19.64**| 85.4 | 75.7 |**100.2**| 13.39 | 1.75 | 295 | 2275 |
 
-**Policy optimization models**, i.e. those that use also the ground-truth dialog states.
+**Policy optimization models**, i.e. those that use also the ground-truth dialog states to generate responses.
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
 
 | Model              | BLEU | Inform  | Success  | Combined Score|Av. len. | CBE | #uniq. words | #uniq. 3-grams |
