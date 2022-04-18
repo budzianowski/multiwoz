@@ -7,7 +7,7 @@ dialogue files `dialogues_*.json` of dialogue data under the `train`, `dev`, and
 **Notes:**
 
 - Compared to MultiWOZ 2.1, we remove `SNG01862.json` as it's an invalid dialogue.
-- MultiWOZ 2.2 is also available on [Hugging Face]((https://huggingface.co/datasets/multi_woz_v22)) and [ParlAI](https://parl.ai/docs/tasks.html). 
+- MultiWOZ 2.2 is also available on [Hugging Face](https://huggingface.co/datasets/multi_woz_v22) and [ParlAI](https://parl.ai/docs/tasks.html). 
 
 ## Schema file
 
