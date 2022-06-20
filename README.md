@@ -17,7 +17,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 
 # :grey_question: FAQ
 - File names refer to two types of dialogues. The `MUL` and `PMUL` names refer to strictly multi domain dialogues (at least 2 main domains are involved) while the `SNG`, `SSNG` and `WOZ` names refer to single domain dialogues with potentially sub-domains like booking.
-- Only system utterances are annotated with dialogue acts – there are no annotations from the user side.
+- Only system utterances are manually annotated with dialogue acts – there are no human annotations from the user side. But MultiWOZ 2.1 automatically annotated user dialogue acts via heuristics developed in [ConvLab](https://arxiv.org/abs/1904.08637).
 - There is no 1-to-1 mapping between dialogue acts and sentences.
 - There is no dialogue state tracking labels for police and hospital as these domains are very simple. However, there are no dialogues with these domains in validation and testing sets either.
 
