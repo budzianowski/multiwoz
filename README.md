@@ -90,9 +90,10 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | UBAR ([paper](https://arxiv.org/abs/2012.03539)\|[code](https://github.com/TonyNemo/UBAR-MultiWOZ))  | 17.6 | 83.4 | 70.3 | 94.4|13.54 | 2.10 | 478  | 5238  |
 | PPTOD ([paper](https://arxiv.org/abs/2109.14739)\|[code](https://github.com/awslabs/pptod))  | 18.2 | 83.1 | 72.7 | 96.1|12.73 | 1.88 | 301  | 2538  |
 | RSTOD ([paper](https://arxiv.org/abs/2208.07097)\|[code](https://github.com/radi-cho/rstod))  | 18.0 | 83.5 | 75.0 | 97.3 | 13.64 | 1.84 | 376  | 3162  |
-| BORT ([paper](https://arxiv.org/abs/2205.02471)\|[code](https://github.com/JD-AI-Research-NLP/BORT))  | 17.9 | 85.5 | **77.4** | 99.4|14.91 | 1.88 | 294  | 2492  |
-| MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | **85.9** | 76.5 | **100.2**|13.94 | 1.93 | 514  | 4066  |
-| GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |**19.64**| 85.4 | 75.7 |**100.2**| 13.39 | 1.75 | 295 | 2275 |
+| BORT ([paper](https://arxiv.org/abs/2205.02471)\|[code](https://github.com/JD-AI-Research-NLP/BORT))  | 17.9 | 85.5 | 77.4 | 99.4|14.91 | 1.88 | 294  | 2492  |
+| MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | 85.9 | 76.5 | 100.2 |13.94 | 1.93 | 514  | 4066  |
+| GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |19.64| 85.4 | 75.7 |100.2| 13.39 | 1.75 | 295 | 2275 |
+| Mars ([paper](https://arxiv.org/abs/2210.08917))  | **19.9** | **88.9** | **78.0** | **103.4**|13.93 | 1.65 | 288  | 2264  |
 
 **Policy optimization models**, i.e. those that use also the ground-truth dialog states to generate responses.
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
