@@ -93,7 +93,8 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | BORT ([paper](https://arxiv.org/abs/2205.02471)\|[code](https://github.com/JD-AI-Research-NLP/BORT))  | 17.9 | 85.5 | 77.4 | 99.4|14.91 | 1.88 | 294  | 2492  |
 | MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | 85.9 | 76.5 | 100.2 |13.94 | 1.93 | 514  | 4066  |
 | GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |19.64| 85.4 | 75.7 |100.2| 13.39 | 1.75 | 295 | 2275 |
-| Mars ([paper](https://arxiv.org/abs/2210.08917))  | **19.9** | **88.9** | **78.0** | **103.4**|13.93 | 1.65 | 288  | 2264  |
+| Mars ([paper](https://arxiv.org/abs/2210.08917))  | **19.9** | 88.9 | 78.0 | 103.4 |13.93 | 1.65 | 288  | 2264  |
+| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.0 | **89.2** | **80.3** | **103.8** | 13.79 | 1.90 | 494  | 3884  |
 
 **Policy optimization models**, i.e. those that use also the ground-truth dialog states to generate responses.
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
@@ -105,6 +106,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 | HDSA ([paper](https://arxiv.org/pdf/1905.12866.pdf)\|[code](https://github.com/wenhuchen/HDSA-Dialog))    | **20.7** | 87.9 | 79.4 | 104.4|14.42 | 1.64 | 259 | 2019 |
 | LAVA ([paper](https://arxiv.org/abs/2011.09378)\|[code](https://gitlab.cs.uni-duesseldorf.de/general/dsml/lava-public/-/tree/master/experiments_woz/sys_config_log_model/2020-05-12-14-51-49-actz_cat))    | 10.8 | **95.9** | **93.5** | 105.5|13.28 | 1.27 | 176 | 708  |
 | HDNO ([paper](https://arxiv.org/pdf/2006.06814.pdf)\|[code](https://github.com/mikezhang95/HDNO))    | 17.8 | 93.3 | 83.4 | 106.1|14.96 | 0.84 | 103 | 315  |
+| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.1 | 93.1 | 83.7 | 107.5 | 13.82 | 1.90 | 489  | 3885  |
 | MarCo ([paper](https://arxiv.org/pdf/2004.12363.pdf)\|[code](https://github.com/InitialBug/MarCo-Dialog))   | 17.3 | 94.5 | 87.2 | **108.1**|16.01 | **1.94** | 319 | **3002** |
 | GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) | 19.92 | 92.8 | 83.5 |**108.1**| 13.68 | 1.75 | 281 | 2344 |
 
