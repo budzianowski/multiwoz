@@ -53,6 +53,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td></td><td></td><td>56.45</td><td></td><td></td><td></td></tr>
  <tr><td><a href="https://arxiv.org/pdf/2109.14739.pdf">PPTOD</a> (Su et al. 2021)</td><td>53.89</td><td></td><td>57.45</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2009.13570.pdf">ConvBERT-DG + Multi</a> (Mehri et al. 2020)</td><td></td><td></td><td>58.7</td><td></td><td></td><td></td></tr>
+ <tr><td><a href="https://arxiv.org/abs/2112.08321">PrefineDST</a> (Cho et al. 2021)</td><td></td><td></td><td>58.9* (53.8)</td><td></td><td></td><td></td></tr>
  <tr><td><a href="https://openreview.net/forum?id=oyZxhRI2RiE">TripPy + SCoRe</a> (Yu et al. 2021)</td><td></td><td></td><td>60.48</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2010.12850.pdf">TripPy + CoCoAug</a> (Li and  Yavuz et al. 2020)</td><td></td><td></td><td>60.53</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2106.00291">TripPy + SaCLog</a> (Dai et al. 2021)</td><td></td><td></td><td>60.61</td><td></td><td></td><td></td></tr>
@@ -61,6 +62,10 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <tr><td><a href="https://aclanthology.org/2021.emnlp-main.404.pdf">SDP-DST</a> (Lee et al. 2021)</td><td></td><td></td><td>56.66<td></td><td>57.60</td><td></td></tr>
 </tbody>
 </table>
+
+*SimpleTOD's evaluation setting does not distinguish between `dontcare` and `none` slot values, which results in an inflated JGA. Results when this discrepancy is resolved are shown in parantheses. For more details, please refer to the CheckDST github for a corrected evaluation script: https://github.com/wise-east/checkdst.
+
+
 </div>
 
 ## Response Generation
