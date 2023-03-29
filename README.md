@@ -121,7 +121,7 @@ The following tables show older numbers which may not be comparable directly bec
 
 \* Denotes that the results were obtained with an even earlier version of the evaluator. The performance on these works were underestimated. 
 
-**Policy optimization**
+**Policy optimization models**
 
 <div class="datagrid" style="width:500px;">
 <table>
@@ -150,7 +150,7 @@ The following tables show older numbers which may not be comparable directly bec
 </table>
 </div>
 
-**End-to-end modelling**
+**End-to-end models**
 
 <div class="datagrid" style="width:500px;">
 <table>
