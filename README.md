@@ -63,7 +63,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 </tbody>
 </table>
 
-*SimpleTOD's evaluation setting does not distinguish between `dontcare` and `none` slot values, which results in an inflated JGA. Results when this discrepancy is resolved are shown in parantheses. For more details, please refer to the CheckDST github for a corrected evaluation script: https://github.com/wise-east/checkdst.
+Note: *SimpleTOD's evaluation setting does not distinguish between `dontcare` and `none` slot values, which results in an inflated JGA. Results when this discrepancy is resolved are shown in parantheses. Refer more details to the CheckDST github for a corrected evaluation script: https://github.com/wise-east/checkdst.
 
 
 </div>
