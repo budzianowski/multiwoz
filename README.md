@@ -121,35 +121,6 @@ The following tables show older numbers which may not be comparable directly bec
 
 \* Denotes that the results were obtained with an even earlier version of the evaluator. The performance on these works were underestimated. 
 
-**Policy optimization models**
-
-<div class="datagrid" style="width:500px;">
-<table>
-<thead><tr><th>(INFORM	+ SUCCESS)*0.5 +	BLEU</th><th colspan="3">MultiWOZ 2.0</th><th colspan="3">MultiWOZ 2.1</th></tr></thead>
-<thead><tr><th>Model</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th></tr></thead>
-<tbody>
- <tr><td><a href="https://arxiv.org/pdf/1907.05346.pdf">TokenMoE*</a> (Pei et al. 2019)</td><td>75.30</td><td> 59.70</td><td> 16.81 </td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://pdfs.semanticscholar.org/47d0/1eb59cd37d16201fcae964bd1d2b49cfb55e.pdf">Baseline*</a> (Budzianowski et al. 2018)</td><td>71.29</td><td> 60.96 </td><td> 18.8 </td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/1907.10016.pdf">Structured Fusion*</a> (Mehri et al. 2019)</td><td>82.70</td><td>72.10</td><td> 16.34</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/abs/1902.08858">LaRL*</a> (Zhao et al. 2019)</td><td>82.8</td><td>79.2</td><td> 12.8</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td>88.9</td><td>67.1</td><td> 16.9</td><td> 85.1</td><td> 73.5</td><td> 16.22</td></tr>
-<tr><td><a href="https://arxiv.org/pdf/1911.08151.pdf">MoGNet</a> (Pei et al. 2019)</td><td>85.3</td><td>73.30</td><td> 20.13</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/1905.12866.pdf">HDSA*</a> (Chen et al. 2019)</td><td>82.9</td><td>68.9</td><td> 23.6</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/abs/1910.03756">ARDM</a> (Wu et al. 2019)</td><td>87.4</td><td>72.8</td><td> 20.6</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/1911.10484.pdf">DAMD</a> (Zhang et al. 2019)</td><td>89.2</td><td>77.9</td><td> 18.6</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/2005.05298.pdf">SOLOIST</a> (Peng et al. 2020)</td><td>89.60</td><td> 79.30</td><td> 18.3</td><td> </td><td> </td><td> </td></tr>
-<tr><td><a href="https://arxiv.org/pdf/2004.12363.pdf">MarCo</a> (Wang et al. 2020)</td><td>92.30</td><td> 78.60</td><td> 20.02</td><td> 92.50</td><td> 77.80</td><td> 19.54</td></tr>
-<tr><td><a href="https://arxiv.org/pdf/2012.03539.pdf">UBAR</a> (Yang et al. 2020)</td><td>94.00</td><td> 83.60</td><td> 17.20</td><td> 92.70</td><td> 81.00</td><td> 16.70</td></tr>
-<tr><td><a href="https://arxiv.org/pdf/2006.06814.pdf">HDNO</a> (Wang et al. 2020)</td><td>96.40</td><td>84.70</td><td>18.85</td><td>92.80</td><td>83.00</td><td> 18.97</td></tr>
-<tr><td><a href="https://www.aclweb.org/anthology/2020.coling-main.41.pdf">LAVA</a> (Lubis et al. 2020)</td><td>97.50</td><td>94.80</td><td>12.10</td><td>96.39</td><td>83.57</td><td>14.02</td></tr>
-<tr><td><a href="https://aclanthology.org/2021.acl-long.13.pdf">JOUST</a> (Tseng et al. 2021)</td><td>94.70</td><td>86.70</td><td>18.70</td><td></td><td></td><td></td></tr>
-<tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>96.80</td><td>87.30</td><td>19.10</td><td></td><td></td><td></td></tr>
-<tr><td><a href="https://arxiv.org/abs/2111.14592">GALAXY</a> (He et al. 2021)</td><td>94.8</td><td>85.7</td><td>19.93</td><td>94.8</td><td>86.2</td><td>20.29</td></tr>
-<tfoot> </tfoot>
-</tbody>
-</table>
-</div>
-
 **End-to-end models**
 
 <div class="datagrid" style="width:500px;">
@@ -179,6 +150,35 @@ The following tables show older numbers which may not be comparable directly bec
 </table>
 </div>
 
+
+**Policy optimization models**
+
+<div class="datagrid" style="width:500px;">
+<table>
+<thead><tr><th>(INFORM	+ SUCCESS)*0.5 +	BLEU</th><th colspan="3">MultiWOZ 2.0</th><th colspan="3">MultiWOZ 2.1</th></tr></thead>
+<thead><tr><th>Model</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th></tr></thead>
+<tbody>
+ <tr><td><a href="https://arxiv.org/pdf/1907.05346.pdf">TokenMoE*</a> (Pei et al. 2019)</td><td>75.30</td><td> 59.70</td><td> 16.81 </td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://pdfs.semanticscholar.org/47d0/1eb59cd37d16201fcae964bd1d2b49cfb55e.pdf">Baseline*</a> (Budzianowski et al. 2018)</td><td>71.29</td><td> 60.96 </td><td> 18.8 </td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1907.10016.pdf">Structured Fusion*</a> (Mehri et al. 2019)</td><td>82.70</td><td>72.10</td><td> 16.34</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/abs/1902.08858">LaRL*</a> (Zhao et al. 2019)</td><td>82.8</td><td>79.2</td><td> 12.8</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td>88.9</td><td>67.1</td><td> 16.9</td><td> 85.1</td><td> 73.5</td><td> 16.22</td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1911.08151.pdf">MoGNet</a> (Pei et al. 2019)</td><td>85.3</td><td>73.30</td><td> 20.13</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1905.12866.pdf">HDSA*</a> (Chen et al. 2019)</td><td>82.9</td><td>68.9</td><td> 23.6</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/abs/1910.03756">ARDM</a> (Wu et al. 2019)</td><td>87.4</td><td>72.8</td><td> 20.6</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/1911.10484.pdf">DAMD</a> (Zhang et al. 2019)</td><td>89.2</td><td>77.9</td><td> 18.6</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2005.05298.pdf">SOLOIST</a> (Peng et al. 2020)</td><td>89.60</td><td> 79.30</td><td> 18.3</td><td> </td><td> </td><td> </td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2004.12363.pdf">MarCo</a> (Wang et al. 2020)</td><td>92.30</td><td> 78.60</td><td> 20.02</td><td> 92.50</td><td> 77.80</td><td> 19.54</td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2012.03539.pdf">UBAR</a> (Yang et al. 2020)</td><td>94.00</td><td> 83.60</td><td> 17.20</td><td> 92.70</td><td> 81.00</td><td> 16.70</td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2006.06814.pdf">HDNO</a> (Wang et al. 2020)</td><td>96.40</td><td>84.70</td><td>18.85</td><td>92.80</td><td>83.00</td><td> 18.97</td></tr>
+<tr><td><a href="https://www.aclweb.org/anthology/2020.coling-main.41.pdf">LAVA</a> (Lubis et al. 2020)</td><td>97.50</td><td>94.80</td><td>12.10</td><td>96.39</td><td>83.57</td><td>14.02</td></tr>
+<tr><td><a href="https://aclanthology.org/2021.acl-long.13.pdf">JOUST</a> (Tseng et al. 2021)</td><td>94.70</td><td>86.70</td><td>18.70</td><td></td><td></td><td></td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2103.06370.pdf">CASPI</a> (Ramachandran et al. 2021)</td><td>96.80</td><td>87.30</td><td>19.10</td><td></td><td></td><td></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2111.14592">GALAXY</a> (He et al. 2021)</td><td>94.8</td><td>85.7</td><td>19.93</td><td>94.8</td><td>86.2</td><td>20.29</td></tr>
+<tfoot> </tfoot>
+</tbody>
+</table>
+</div>
 
 # :thought_balloon: References
 If you use any source codes or datasets included in this toolkit in your
@@ -292,4 +292,4 @@ MultiWOZ is an open source toolkit for building end-to-end trainable task-orient
 It is released by Paweł Budzianowski from Cambridge Dialogue Systems Group under the MIT License.
 
 # Bug Report
-If you have found any bugs in the code, please contact: budzianowski at gmail dot com
+If you have found any bugs in the code, please contact: budzianowski@gmail.com or jianguozhang@salesforce.com
