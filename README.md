@@ -98,8 +98,11 @@ Note: *SimpleTOD's evaluation setting does not distinguish between `dontcare` an
 | BORT ([paper](https://arxiv.org/abs/2205.02471)\|[code](https://github.com/JD-AI-Research-NLP/BORT))  | 17.9 | 85.5 | 77.4 | 99.4|14.91 | 1.88 | 294  | 2492  |
 | MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | 85.9 | 76.5 | 100.2 |13.94 | 1.93 | 514  | 4066  |
 | GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |19.64| 85.4 | 75.7 |100.2| 13.39 | 1.75 | 295 | 2275 |
+| RewardNet+GS ([paper](https://arxiv.org/pdf/2302.10342.pdf)\[code](https://github.com/Shentao-YANG/Fantastic_Reward_ICLR2023))  | 17.6 | 87.6 | **81.5** | 102.2 | 13.22 | 1.99 | 423  | 3942  |
 | Mars ([paper](https://arxiv.org/abs/2210.08917))  | **19.9** | 88.9 | 78.0 | 103.4 |13.93 | 1.65 | 288  | 2264  |
-| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.0 | **89.2** | **80.3** | **103.8** | 13.79 | 1.90 | 494  | 3884  |
+| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.0 | **89.2** | 80.3 | **103.8** | 13.79 | 1.90 | 494  | 3884  |
+
+
 
 **Policy optimization models**, i.e. those that use also the ground-truth dialog states to generate responses.
 ##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
