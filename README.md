@@ -11,7 +11,7 @@ Multi-Domain Wizard-of-Oz dataset (MultiWOZ), a fully-labeled collection of huma
 ## Data structure
 There are 3,406 single-domain dialogues that include booking if the domain allows for that and 7,032 multi-domain dialogues consisting of at least 2 up to 5 domains. To enforce reproducibility of results, the corpus was randomly split into a train, test and development set. The test and development sets contain 1k examples each. Even though all dialogues are coherent, some of them were not finished in terms of task description. Therefore, the validation and test sets only contain fully successful dialogues thus enabling a fair comparison of models. There are no dialogues from hospital and police domains in validation and testing sets.
 
-Each dialogue consists of a goal, multiple user and system utterances as well as a belief state. Additionally, the task description in natural language presented to turkers working from the visitor’s side is added. Dialogues with MUL in the name refers to multi-domain dialogues. Dialogues with SNG refers to single-domain dialogues (but a booking sub-domain is possible). The booking might not have been possible to complete if fail_book option is not empty in goal specifications – turkers did not know about that.
+Each dialogue consists of a goal, multiple user and system utterances as well as a belief state. Additionally, the task description in natural language presented to turkers working from the visitor's side is added. Dialogues with MUL in the name refers to multi-domain dialogues. Dialogues with SNG refers to single-domain dialogues (but a booking sub-domain is possible). The booking might not have been possible to complete if fail_book option is not empty in goal specifications – turkers did not know about that.
 
 The belief state have three sections: semi, book and booked. Semi refers to slots from a particular domain. Book refers to booking slots for a particular domain and booked is a sub-list of book dictionary with information about the booked entity (once the booking has been made). The goal sometimes was wrongly followed by the turkers which may results in the wrong belief state. The joint accuracy metrics includes ALL slots.
 
@@ -61,6 +61,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <tr><td><a href="https://aclanthology.org/2021.nlp4convai-1.8/">AG-DST</a> (Tian et al. 2021)</td><td></td><td></td><td></td><td></td><td>57.26</td><td></td></tr>
 <tr><td><a href="https://aclanthology.org/2021.emnlp-main.404.pdf">SDP-DST</a> (Lee et al. 2021)</td><td></td><td></td><td>56.66<td></td><td>57.60</td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2110.11205v3.pdf">DAIR</a> (Huang et al. 2022)</td><td></td><td></td><td></td><td></td><td>59.98</td><td></td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2305.02468.pdf">TOATOD</a> (Bang et al. 2023)</td><td></td><td></td><td>54.97</td><td></td><td>63.79</td></tr>
 </tbody>
 </table>
 
@@ -83,30 +84,30 @@ Note: *SimpleTOD's evaluation setting does not distinguish between `dontcare` an
 | Reference corpus &nbsp; | -    | 93.7 | 90.9 | 14.00 | 3.01 | 1407 | 23877 | 
 
 **End-to-end models**, i.e. those that use only the dialogue context as input to generate responses. 
-##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
+##### Combined Score = (INFORM + SUCCESS)*0.5 + BLEU
 
-| Model              | BLEU | Inform  | Success  | Combined Score |Av. len. | CBE | #uniq. words | #uniq. 3-grams |
-| ------------------ | :-----:| :-------:| :--------:| :---------:|:---------:| :-----------------:| :-------------:| :-------------:| 
-| LABES ([paper](https://arxiv.org/pdf/2009.08115v3.pdf)\|[code](https://github.com/thu-spmi/LABES)) | 18.9 | 68.5 | 58.1 | 82.2|14.20 | 1.83 | 374  | 3228  |
-| DAMD ([paper](https://arxiv.org/abs/1911.10484)\|[code](https://github.com/thu-spmi/damd-multiwoz))  | 16.4 | 57.9 | 47.6 | 84.8|14.27 | 1.65 | 212  | 1755  |
-| AuGPT ([paper](https://arxiv.org/abs/2102.05126)\|[code](https://github.com/ufal/augpt)) | 16.8 | 76.6 | 60.5 |85.4 |12.90 | 2.15 | 608  | 5843  |
-| MinTL ([paper](https://arxiv.org/pdf/2009.12005.pdf)\|[code](https://github.com/zlinao/MinTL)) | 19.4 | 73.7 | 65.4 | 89.0|14.78 | 1.81 | 297  | 2525  |
-| SOLOIST ([paper](https://arxiv.org/abs/2005.05298))  | 13.6 | 82.3 | 72.4 | 90.9|18.45 | **2.41** | **615**  | **7923**  |
-| DoTS ([paper](https://arxiv.org/pdf/2103.06648.pdf))  | 16.8 | 80.4 | 68.7 | 91.4|14.66 | 2.10 | 411  | 5162  |
-| UBAR ([paper](https://arxiv.org/abs/2012.03539)\|[code](https://github.com/TonyNemo/UBAR-MultiWOZ))  | 17.6 | 83.4 | 70.3 | 94.4|13.54 | 2.10 | 478  | 5238  |
-| PPTOD ([paper](https://arxiv.org/abs/2109.14739)\|[code](https://github.com/awslabs/pptod))  | 18.2 | 83.1 | 72.7 | 96.1|12.73 | 1.88 | 301  | 2538  |
-| RSTOD ([paper](https://arxiv.org/abs/2208.07097)\|[code](https://github.com/radi-cho/rstod))  | 18.0 | 83.5 | 75.0 | 97.3 | 13.64 | 1.84 | 376  | 3162  |
-| BORT ([paper](https://arxiv.org/abs/2205.02471)\|[code](https://github.com/JD-AI-Research-NLP/BORT))  | 17.9 | 85.5 | 77.4 | 99.4|14.91 | 1.88 | 294  | 2492  |
-| MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | 85.9 | 76.5 | 100.2 |13.94 | 1.93 | 514  | 4066  |
-| GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |19.64| 85.4 | 75.7 |100.2| 13.39 | 1.75 | 295 | 2275 |
-| RewardNet([paper](https://arxiv.org/pdf/2302.10342.pdf)\|[code](https://github.com/Shentao-YANG/Fantastic_Reward_ICLR2023))| 17.6 | 87.6 | **81.5** | 102.2 | 13.22 | 1.99 | 423  | 3942  |
-| Mars ([paper](https://arxiv.org/abs/2210.08917))  | **19.9** | 88.9 | 78.0 | 103.4 |13.93 | 1.65 | 288  | 2264  |
-| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.0 | **89.2** | 80.3 | **103.8** | 13.79 | 1.90 | 494  | 3884  |
-
+| Model                                                                 |                                BLEU                                |  Inform  | Success  | Combined Score |Av. len. | CBE | #uniq. words | #uniq. 3-grams |
+|-----------------------------------------------------------------------|:------------------------------------------------------------------:|:--------:|:--------:|:--------------:|:---------:| :-----------------:| :-------------:| :-------------:| 
+| LABES ([paper](https://arxiv.org/pdf/2009.08115v3.pdf)\               |             [code](https://github.com/thu-spmi/LABES))             |   18.9   |   68.5   |      58.1      | 82.2|14.20 | 1.83 | 374  | 3228  |
+| DAMD ([paper](https://arxiv.org/abs/1911.10484)\                      |         [code](https://github.com/thu-spmi/damd-multiwoz))         |   16.4   |   57.9   |      47.6      | 84.8|14.27 | 1.65 | 212  | 1755  |
+| AuGPT ([paper](https://arxiv.org/abs/2102.05126)\                     |               [code](https://github.com/ufal/augpt))               |   16.8   |   76.6   |      60.5      |85.4 |12.90 | 2.15 | 608  | 5843  |
+| MinTL ([paper](https://arxiv.org/pdf/2009.12005.pdf)\                 |              [code](https://github.com/zlinao/MinTL))              |   19.4   |   73.7   |      65.4      | 89.0|14.78 | 1.81 | 297  | 2525  |
+| SOLOIST ([paper](https://arxiv.org/abs/2005.05298))                   |                                13.6                                |   82.3   |   72.4   |      90.9      |18.45 | **2.41** | **615**  | **7923**  |
+| DoTS ([paper](https://arxiv.org/pdf/2103.06648.pdf))                  |                                16.8                                |   80.4   |   68.7   |      91.4      |14.66 | 2.10 | 411  | 5162  |
+| UBAR ([paper](https://arxiv.org/abs/2012.03539)\                      |         [code](https://github.com/TonyNemo/UBAR-MultiWOZ))         |   17.6   |   83.4   |      70.3      | 94.4|13.54 | 2.10 | 478  | 5238  |
+| PPTOD ([paper](https://arxiv.org/abs/2109.14739)\                     |             [code](https://github.com/awslabs/pptod))              |   18.2   |   83.1   |      72.7      | 96.1|12.73 | 1.88 | 301  | 2538  |
+| RSTOD ([paper](https://arxiv.org/abs/2208.07097)\                     |             [code](https://github.com/radi-cho/rstod))             |   18.0   |   83.5   |      75.0      | 97.3 | 13.64 | 1.84 | 376  | 3162  |
+| BORT ([paper](https://arxiv.org/abs/2205.02471)\                      |        [code](https://github.com/JD-AI-Research-NLP/BORT))         |   17.9   |   85.5   |      77.4      | 99.4|14.91 | 1.88 | 294  | 2492  |
+| MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\ |            [code](https://github.com/bepoetree/MTTOD))             |   19.0   |   85.9   |      76.5      | 100.2 |13.94 | 1.93 | 514  | 4066  |
+| GALAXY ([paper](https://arxiv.org/abs/2111.14592)\                    |            [code](https://github.com/siat-nlp/GALAXY))             |  19.64   |   85.4   |      75.7      |100.2| 13.39 | 1.75 | 295 | 2275 |
+| RewardNet([paper](https://arxiv.org/pdf/2302.10342.pdf)\              | [code](https://github.com/Shentao-YANG/Fantastic_Reward_ICLR2023)) |   17.6   |   87.6   |    **81.5**    | 102.2 | 13.22 | 1.99 | 423  | 3942  |
+| Mars ([paper](https://arxiv.org/abs/2210.08917))                      |                              **19.9**                              |   88.9   |   78.0   |     103.4      |13.93 | 1.65 | 288  | 2264  |
+| KRLS ([paper](https://arxiv.org/pdf/2211.16773))                      |                                19.0                                | **89.2** |   80.3   |   **103.8**    | 13.79 | 1.90 | 494  | 3884  |
+| TOATOD ([paper](https://arxiv.org/pdf/2305.02468.pdf)\                |           [code](https://github.com/sogang-isds/TOATOD))           |  17.04   | **90.0** |   **79.80**    | 101.94 |  | 
 
 
 **Policy optimization models**, i.e. those that use also the ground-truth dialog states to generate responses.
-##### Combined Score = (INFORM	+ SUCCESS)*0.5 + BLEU
+##### Combined Score = (INFORM + SUCCESS)*0.5 + BLEU
 
 | Model              | BLEU | Inform  | Success  | Combined Score|Av. len. | CBE | #uniq. words | #uniq. 3-grams |
 | ------------------ | :-----:| :-------:| :--------:| :---------:|:---------:| :-----------------:| :-------------:| :-------------:|
@@ -129,7 +130,7 @@ The following tables show older numbers which may not be comparable directly bec
 
 <div class="datagrid" style="width:500px;">
 <table>
-<thead><tr><th>(INFORM	+ SUCCESS)*0.5 +	BLEU</th><th colspan="3">MultiWOZ 2.0</th><th colspan="3">MultiWOZ 2.1</th></tr></thead>
+<thead><tr><th>(INFORM + SUCCESS)*0.5 +   BLEU</th><th colspan="3">MultiWOZ 2.0</th><th colspan="3">MultiWOZ 2.1</th></tr></thead>
 <thead><tr><th>Model</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th></tr></thead>
 <tbody>
 <tr><td><a href="https://arxiv.org/pdf/1911.10484.pdf">DAMD</a> (Zhang et al. 2019)</td><td>76.3</td><td>60.4</td><td> 16.6</td><td> </td><td> </td><td> </td></tr>
@@ -159,7 +160,7 @@ The following tables show older numbers which may not be comparable directly bec
 
 <div class="datagrid" style="width:500px;">
 <table>
-<thead><tr><th>(INFORM	+ SUCCESS)*0.5 +	BLEU</th><th colspan="3">MultiWOZ 2.0</th><th colspan="3">MultiWOZ 2.1</th></tr></thead>
+<thead><tr><th>(INFORM + SUCCESS)*0.5 +   BLEU</th><th colspan="3">MultiWOZ 2.0</th><th colspan="3">MultiWOZ 2.1</th></tr></thead>
 <thead><tr><th>Model</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th><th>INFORM</th><th>SUCCESS</th><th>BLEU</th></tr></thead>
 <tbody>
  <tr><td><a href="https://arxiv.org/pdf/1907.05346.pdf">TokenMoE*</a> (Pei et al. 2019)</td><td>75.30</td><td> 59.70</td><td> 16.81 </td><td> </td><td> </td><td> </td></tr>
