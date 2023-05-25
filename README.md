@@ -61,6 +61,7 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 <tr><td><a href="https://aclanthology.org/2021.nlp4convai-1.8/">AG-DST</a> (Tian et al. 2021)</td><td></td><td></td><td></td><td></td><td>57.26</td><td></td></tr>
 <tr><td><a href="https://aclanthology.org/2021.emnlp-main.404.pdf">SDP-DST</a> (Lee et al. 2021)</td><td></td><td></td><td>56.66<td></td><td>57.60</td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2110.11205v3.pdf">DAIR</a> (Huang et al. 2022)</td><td></td><td></td><td></td><td></td><td>59.98</td><td></td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2305.02468.pdf">TOATOD</a> (Bang et al. 2023)</td><td></td><td></td><td>54.97</td><td></td><td>63.79</td><td></td></tr>
 </tbody>
 </table>
 
@@ -99,6 +100,7 @@ Note: *SimpleTOD's evaluation setting does not distinguish between `dontcare` an
 | BORT ([paper](https://arxiv.org/abs/2205.02471)\|[code](https://github.com/JD-AI-Research-NLP/BORT))  | 17.9 | 85.5 | 77.4 | 99.4|14.91 | 1.88 | 294  | 2492  |
 | MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | 85.9 | 76.5 | 100.2 |13.94 | 1.93 | 514  | 4066  |
 | GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |19.64| 85.4 | 75.7 |100.2| 13.39 | 1.75 | 295 | 2275 |
+| TOATOD ([paper](https://arxiv.org/pdf/2305.02468.pdf)\|[code](https://github.com/sogang-isds/TOATOD)) | 17.04  | **90.0** | 79.80 | 101.94 |  |  |  |  |
 | RewardNet([paper](https://arxiv.org/pdf/2302.10342.pdf)\|[code](https://github.com/Shentao-YANG/Fantastic_Reward_ICLR2023))| 17.6 | 87.6 | **81.5** | 102.2 | 13.22 | 1.99 | 423  | 3942  |
 | Mars ([paper](https://arxiv.org/abs/2210.08917))  | **19.9** | 88.9 | 78.0 | 103.4 |13.93 | 1.65 | 288  | 2264  |
 | KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.0 | **89.2** | 80.3 | **103.8** | 13.79 | 1.90 | 494  | 3884  |
@@ -149,6 +151,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://aclanthology.org/2021.findings-emnlp.112.pdf">MTTOD</a> (Lee 2021)</td><td>90.99</td><td> 82.58</td><td> 20.25</td><td> 90.99</td><td> 82.08</td><td> 19.68</td></tr>
 <tr><td><a href="https://arxiv.org/abs/2205.02471">BORT</a> (Sun et al. 2022)</td><td>93.80</td><td>85.80</td><td>18.50</td><td> </td><td> </td><td></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2111.14592">GALAXY</a> (He et al. 2021)</td><td>94.40</td><td> 85.30</td><td> 20.50</td><td> 95.30</td><td> 86.20</td><td> 20.01</td></tr>
+<tr><td><a href="https://arxiv.org/pdf/2305.02468.pdf">TOATOD</a> (Bang et al. 2023)</td><td>97.00</td><td>87.40</td><td>17.12</td><td></td><td></td><td></td></tr>
  <tfoot> </tfoot>
 </tbody>
 </table>
