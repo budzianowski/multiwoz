@@ -87,7 +87,7 @@
         },
         "pricerange": "cheap",
         "stars": "4",
-        "n": "yes",
+        "takesbookings": "yes",
         "type": "guesthouse"
     },
     {
