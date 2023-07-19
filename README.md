@@ -7,6 +7,8 @@ Multi-Domain Wizard-of-Oz dataset (MultiWOZ), a fully-labeled collection of huma
  - The new, corrected version of the dataset is available at [MultiWOZ_2.1](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.1.zip) thanks to [the Amazon crew](https://arxiv.org/abs/1907.01669).
  - The dataset used in the EMNLP publication can be accessed at: [MultiWOZ_2.0](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_2.0.zip)
  - The dataset used in the ACL publication can be accessed at: [MultiWOZ_1.0](https://github.com/budzianowski/multiwoz/blob/master/data/MultiWOZ_1.0.zip)
+## Dataset access
+These datasets can be directly loaded through [DialogStudio](https://github.com/salesforce/DialogStudio). 
 
 ## Data structure
 There are 3,406 single-domain dialogues that include booking if the domain allows for that and 7,032 multi-domain dialogues consisting of at least 2 up to 5 domains. To enforce reproducibility of results, the corpus was randomly split into a train, test and development set. The test and development sets contain 1k examples each. Even though all dialogues are coherent, some of them were not finished in terms of task description. Therefore, the validation and test sets only contain fully successful dialogues thus enabling a fair comparison of models. There are no dialogues from hospital and police domains in validation and testing sets.
