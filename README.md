@@ -56,11 +56,13 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
  <tr><td><a href="https://arxiv.org/pdf/2109.14739.pdf">PPTOD</a> (Su et al. 2021)</td><td>53.89</td><td></td><td>57.45</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2009.13570.pdf">ConvBERT-DG + Multi</a> (Mehri et al. 2020)</td><td></td><td></td><td>58.7</td><td></td><td></td><td></td></tr>
  <tr><td><a href="https://arxiv.org/abs/2112.08321">PrefineDST</a> (Cho et al. 2021)</td><td></td><td></td><td>58.9* (53.8)</td><td></td><td></td><td></td></tr>
+ <tr><td><a href="https://aclanthology.org/2022.coling-1.46/">SPACE-2</a> (He et al. 2022)</td><td></td><td></td><td>59.51</td><td></td><td></td><td></td></tr>
  <tr><td><a href="https://openreview.net/forum?id=oyZxhRI2RiE">TripPy + SCoRe</a> (Yu et al. 2021)</td><td></td><td></td><td>60.48</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2010.12850.pdf">TripPy + CoCoAug</a> (Li and  Yavuz et al. 2020)</td><td></td><td></td><td>60.53</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2106.00291">TripPy + SaCLog</a> (Dai et al. 2021)</td><td></td><td></td><td>60.61</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://aclanthology.org/2021.emnlp-main.620.pdf">KAGE-GPT2</a> (Lin et al, 2021)</td><td>54.86</td><td>97.47</td><td></td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://aclanthology.org/2021.nlp4convai-1.8/">AG-DST</a> (Tian et al. 2021)</td><td></td><td></td><td></td><td></td><td>57.26</td><td></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2209.06664">SPACE-3</a> (He et al. 2022)</td><td></td><td></td><td></td><td></td><td>57.50</td><td></td></tr>
 <tr><td><a href="https://aclanthology.org/2021.emnlp-main.404.pdf">SDP-DST</a> (Lee et al. 2021)</td><td></td><td></td><td>56.66<td></td><td>57.60</td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2110.11205v3.pdf">DAIR</a> (Huang et al. 2022)</td><td></td><td></td><td></td><td></td><td>59.98</td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2305.02468.pdf">TOATOD</a> (Bang et al. 2023)</td><td></td><td></td><td>54.97</td><td></td><td>63.79</td><td></td></tr>
@@ -154,6 +156,7 @@ The following tables show older numbers which may not be comparable directly bec
 <tr><td><a href="https://arxiv.org/abs/2205.02471">BORT</a> (Sun et al. 2022)</td><td>93.80</td><td>85.80</td><td>18.50</td><td> </td><td> </td><td></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2111.14592">GALAXY</a> (He et al. 2021)</td><td>94.40</td><td> 85.30</td><td> 20.50</td><td> 95.30</td><td> 86.20</td><td> 20.01</td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2305.02468.pdf">TOATOD</a> (Bang et al. 2023)</td><td></td><td></td><td></td><td>97.00</td><td>87.40</td><td>17.12</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2209.06664">SPACE-3</a> (He et al. 2022)</td><td>95.30</td><td> 88.00</td><td> 19.30</td><td> 95.60</td><td> 86.10</td><td> 19.91</td></tr>
 <tfoot> </tfoot>
 </tbody>
 </table>
