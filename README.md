@@ -106,9 +106,10 @@ Note: *SimpleTOD's evaluation setting does not distinguish between `dontcare` an
 | MTTOD ([paper](https://aclanthology.org/2021.findings-emnlp.112.pdf)\|[code](https://github.com/bepoetree/MTTOD))  | 19.0 | 85.9 | 76.5 | 100.2 |13.94 | 1.93 | 514  | 4066  |
 | GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) |19.64| 85.4 | 75.7 |100.2| 13.39 | 1.75 | 295 | 2275 |
 | TOATOD ([paper](https://arxiv.org/pdf/2305.02468.pdf)\|[code](https://github.com/sogang-isds/TOATOD)) | 17.04  | **90.0** | 79.8 | 101.9 |  |  |  |  |
-| RewardNet([paper](https://arxiv.org/pdf/2302.10342.pdf)\|[code](https://github.com/Shentao-YANG/Fantastic_Reward_ICLR2023))| 17.6 | 87.6 | **81.5** | 102.2 | 13.22 | 1.99 | 423  | 3942  |
+| RewardNet([paper](https://arxiv.org/pdf/2302.10342.pdf)\|[code](https://github.com/Shentao-YANG/Fantastic_Reward_ICLR2023))| 17.6 | 87.6 | 81.5 | 102.2 | 13.22 | 1.99 | 423  | 3942  |
 | Mars ([paper](https://arxiv.org/abs/2210.08917))  | **19.9** | 88.9 | 78.0 | 103.4 |13.93 | 1.65 | 288  | 2264  |
-| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.0 | 89.2 | 80.3 | **103.8** | 13.79 | 1.90 | 494  | 3884  |
+| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.0 | 89.2 | 80.3 | 103.8 | 13.79 | 1.90 | 494  | 3884  |
+| DiactTOD ([paper](https://arxiv.org/abs/2308.00878)) | 17.5 | 89.5 | **84.2** | **104.4** | 15.16 | 2.00 | 418 | 4477 |
 
 
 
@@ -117,14 +118,15 @@ Note: *SimpleTOD's evaluation setting does not distinguish between `dontcare` an
 
 | Model              | BLEU | Inform  | Success  | Combined Score|Av. len. | CBE | #uniq. words | #uniq. 3-grams |
 | ------------------ | :-----:| :-------:| :--------:| :---------:|:---------:| :-----------------:| :-------------:| :-------------:|
-| UniConv ([paper](https://arxiv.org/pdf/2004.14307.pdf)\|[code](https://github.com/henryhungle/UniConv)) | 18.1 | 66.7 | 58.7 | 80.8|14.17 | 1.79 | **338** | 2932 |
+| UniConv ([paper](https://arxiv.org/pdf/2004.14307.pdf)\|[code](https://github.com/henryhungle/UniConv)) | 18.1 | 66.7 | 58.7 | 80.8|14.17 | 1.79 | 338 | 2932 |
 | SFN ([paper](https://arxiv.org/pdf/1907.10016.pdf)\|[code](https://github.com/Shikib/structured_fusion_networks))     | 14.1 | 93.4 | 82.3 | 101.9|14.93 | 1.63 | 188 | 1218 |
 | HDSA ([paper](https://arxiv.org/pdf/1905.12866.pdf)\|[code](https://github.com/wenhuchen/HDSA-Dialog))    | **20.7** | 87.9 | 79.4 | 104.4|14.42 | 1.64 | 259 | 2019 |
 | LAVA ([paper](https://arxiv.org/abs/2011.09378)\|[code](https://gitlab.cs.uni-duesseldorf.de/general/dsml/lava-public/-/tree/master/experiments_woz/sys_config_log_model/2020-05-12-14-51-49-actz_cat))    | 10.8 | **95.9** | **93.5** | 105.5|13.28 | 1.27 | 176 | 708  |
 | HDNO ([paper](https://arxiv.org/pdf/2006.06814.pdf)\|[code](https://github.com/mikezhang95/HDNO))    | 17.8 | 93.3 | 83.4 | 106.1|14.96 | 0.84 | 103 | 315  |
-| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.1 | 93.1 | 83.7 | 107.5 | 13.82 | 1.90 | 489  | 3885  |
-| MarCo ([paper](https://arxiv.org/pdf/2004.12363.pdf)\|[code](https://github.com/InitialBug/MarCo-Dialog))   | 17.3 | 94.5 | 87.2 | **108.1**|16.01 | **1.94** | 319 | **3002** |
-| GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) | 19.92 | 92.8 | 83.5 |**108.1**| 13.68 | 1.75 | 281 | 2344 |
+| KRLS ([paper](https://arxiv.org/pdf/2211.16773))  | 19.1 | 93.1 | 83.7 | 107.5 | 13.82 | 1.90 | **489**  | **3885**  |
+| MarCo ([paper](https://arxiv.org/pdf/2004.12363.pdf)\|[code](https://github.com/InitialBug/MarCo-Dialog))   | 17.3 | 94.5 | 87.2 | 108.1|16.01 | **1.94** | 319 | 3002 |
+| GALAXY ([paper](https://arxiv.org/abs/2111.14592)\|[code](https://github.com/siat-nlp/GALAXY)) | 19.92 | 92.8 | 83.5 | 108.1 | 13.68 | 1.75 | 281 | 2344 |
+| DiactTOD ([paper](https://arxiv.org/abs/2308.00878)) | 17.8 | 94.8 | 90.2 | **110.3** |16.43 | 1.76 | 438 | 3394 |
 
 ### Older results
 
