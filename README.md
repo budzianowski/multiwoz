@@ -24,6 +24,8 @@ The belief state have three sections: semi, book and booked. Semi refers to slot
 - There is no dialogue state tracking labels for police and hospital as these domains are very simple. However, there are no dialogues with these domains in validation and testing sets either.
 
 # :trophy: Benchmarks
+If you want to update benchmarks table with new results, please create a pull request to incorporate the new model.
+
 ## Dialog State Tracking
 
 :bangbang: **For the DST experiments please follow the data processing and scoring scripts from the [TRADE model](https://github.com/jasonwu0731/trade-dst).**
