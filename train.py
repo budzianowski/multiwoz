@@ -96,7 +96,7 @@ def trainIters(model, n_epochs=10, args=args):
         model.optimizer = Adam(lr=args.lr_rate, params=filter(lambda x: x.requires_grad, model.parameters()), weight_decay=args.l2_norm)
         model.optimizer_policy = Adam(lr=args.lr_rate, params=filter(lambda x: x.requires_grad, model.policy.parameters()), weight_decay=args.l2_norm)
 
-        dials = train_dials.keys()
+        dials = list(train_dials.keys())
         random.shuffle(dials)
         input_tensor = [];target_tensor = [];bs_tensor = [];db_tensor = []
         for name in dials:
