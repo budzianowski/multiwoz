@@ -10,6 +10,10 @@ import numpy as np
 import torch
 from torch.optim import Adam
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR + "/multiwoz/model/")
+
+
 from utils import util
 from model.model import Model
 
