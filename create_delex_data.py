@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import copy
 import json
-import os
+import os, sys
 import re
 import shutil
 import urllib
@@ -11,6 +11,8 @@ from zipfile import ZipFile
 from tqdm import tqdm
 
 import numpy as np
+BaseDir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BaseDir + "/multiwoz/utils/")
 
 from utils import dbPointer
 from utils import delexicalize
