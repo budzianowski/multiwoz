@@ -55,6 +55,7 @@ If you want to update benchmarks table with new results, please create a pull re
 <tr><td><a href="https://www.aaai.org/Papers/AAAI/2020GB/AAAI-ChenL.10030.pdf">SST</a> (Chen et al. 2020)</td><td></td><td></td><td>55.23</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2005.02877">TripPy</a> (Heck et al. 2020)</td><td></td><td></td><td>55.3</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2005.00796.pdf">SimpleTOD</a> (Hosseini-Asl et al. 2020)</td><td></td><td></td><td>56.45</td><td></td><td></td><td></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2209.07742">SF-DST</a> (Lee et al. 2022)</td><td></td><td></td><td>56.96</td><td></td><td></td><td></td></tr>
  <tr><td><a href="https://arxiv.org/pdf/2109.14739.pdf">PPTOD</a> (Su et al. 2021)</td><td>53.89</td><td></td><td>57.45</td><td></td><td></td><td></td></tr>
 <tr><td><a href="https://arxiv.org/pdf/2009.13570.pdf">ConvBERT-DG + Multi</a> (Mehri et al. 2020)</td><td></td><td></td><td>58.7</td><td></td><td></td><td></td></tr>
  <tr><td><a href="https://arxiv.org/abs/2112.08321">PrefineDST</a> (Cho et al. 2021)</td><td></td><td></td><td>58.9* (53.8)</td><td></td><td></td><td></td></tr>
