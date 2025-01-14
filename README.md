@@ -77,6 +77,43 @@ Note: *SimpleTOD's evaluation setting does not distinguish between `dontcare` an
 
 </div>
 
+
+## Zero-shot Dialog State Tracking with LLM
+Version 2.1 is used unless stated otherwise.
+<div class="datagrid" style="width:500px;">
+<table>
+<thead><tr><th></th><th colspan="2">Attraction</th><th colspan="2">Hotel</th><th colspan="2">Restaurant</th><th colspan="2">Taxi</th><th colspan="2">Train</th><th colspan="2">Average</th></tr></thead>
+<thead><tr><th>Model</th><th>JGA</th><th>Slot-F1</th><th>JGA</th><th>Slot-F1</th><th>JGA</th><th>Slot-F1</th><th>JGA</th><th>Slot-F1</th><th>JGA</th><th>Slot-F1</th><th>JGA</th><th>Slot-F1</th></tr></thead>
+<tbody>
+<tr><td><a href="https://aclanthology.org/2022.findings-emnlp.193.pdf">IC-DST* (Codex) </a> (Hu et al., 2022) </td><td>59.97</td> <td></td> <td>46.69</td> <td></td> <td>57.28</td> <td></td> <td>71.35</td> <td></td> <td>49.37</td><td> </td> <td>56.45</td> <td></td></tr>
+
+<tr><td><a href="https://arxiv.org/pdf/2409.06243">SERI-DST** (GPT-3.5) </a> (Lee and Lee, 2024) </td><td>67.50</td> <td></td> <td>47.00</td> <td></td> <td>51.70</td> <td></td> <td>77.10</td> <td></td> <td>59.50</td><td> </td> <td>60.58</td> <td></td></tr>
+
+
+<tr><td><a href="https://arxiv.org/pdf/2306.01386">Heck et al. (GPT-3.5) </a> (Heck et al., 2023) </td><td>52.70</td> <td></td> <td>42.00</td> <td></td> <td>55.80</td>  <td></td> <td>70.90</td> <td></td> <td>60.80</td> <td></td> <td>56.44</td> <td></td></tr>
+
+<tr><td><a href="https://arxiv.org/pdf/2310.08885">InstructTODS (GPT-3) </a> (Chung, Willy, et al., 2023) </td><td>30.23</td> <td>65.38</td> <td>26.77</td> <td>76.28</td> <td>48.24</td> <td>82.90</td> <td>56.22</td> <td>75.33</td> <td>53.75</td> <td>83.64</td> <td>42.02</td> <td>78.60</td></tr>
+
+<tr><td><a href="https://arxiv.org/pdf/2310.08885">InstructTODS (GPT-4) </a> (Chung, Willy, et al., 2023) </td><td>39.53</td> <td>78.99</td> <td>31.23</td> <td>84.07</td> <td>55.86</td> <td>88.23</td> <td>63.24</td> <td>82.71</td> <td>59.83</td> <td>89.72</td> <td>48.16</td> <td>85.62</td></tr>
+
+<tr><td><a href="https://aclanthology.org/2024.acl-long.471.pdf">FNCTOD (LLAMA2-13B) </a> (Li, Zekun et al., 2024) </td><td>62.24</td> <td>84.99</td> <td>46.83</td> <td>85.39</td> <td>60.27</td> <td>88.69</td> <td>67.48</td> <td>80.39</td> <td>60.90</td> <td>89.88</td> <td>59.54</td> <td>85.87</td></tr>
+
+
+
+
+
+</tbody>
+</table>
+
+
+
+</div>
+
+
+Note: 
+- *IC-DST relies on in-domain data to train the retriever for example selection.
+- **SERI-DST relies on in-domain data to retreive examples.
+
 ## Response Generation
 
 :bangbang: **For the response generation evaluation please see and use the scoring scripts from [this repository](https://github.com/Tomiinek/MultiWOZ_Evaluation).** 
